@@ -1,0 +1,1663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>G&amp;C Fireworks | Family-Owned, Veteran-Led Fireworks Store in Fayetteville, AR</title>
+<meta name="description" content="G&amp;C Fireworks is Fayetteville's family-owned, veteran-led fireworks store. Create magical Fourth of July memories in Northwest Arkansas. Pre-orders & curbside pickup available.">
+<meta property="og:title" content="G&amp;C Fireworks | Fayetteville, AR">
+<meta property="og:description" content="Family-owned, veteran-led fireworks store in Northwest Arkansas.">
+<meta property="og:image" content="assets/images/logo.png">
+<link rel="icon" type="image/png" href="assets/images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Anton&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#E5232C;
+    --red-dark:#B5161D;
+    --blue:#3FB8DD;
+    --blue-dark:#1E8FB3;
+    --ink:#0B1220;
+    --ink-2:#121A2B;
+    --ink-3:#1B2540;
+    --cream:#F8F4EC;
+    --gold:#FFC857;
+    --gray:#8892A6;
+    --line:rgba(255,255,255,0.10);
+    --shadow:0 20px 60px rgba(0,0,0,0.45);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    color:var(--cream);
+    background:var(--ink);
+    line-height:1.55;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+  h1,h2,h3,h4{font-family:'Anton','Bebas Neue',Impact,sans-serif;letter-spacing:.02em;line-height:1.05;text-transform:uppercase;font-weight:400}
+  h1{font-size:clamp(2.4rem,6.5vw,5.5rem)}
+  h2{font-size:clamp(1.8rem,4.5vw,3.5rem)}
+  h3{font-size:clamp(1.3rem,2.6vw,2rem)}
+  .container{max-width:1240px;margin:0 auto;padding:0 1.25rem}
+  .btn{
+    display:inline-flex;align-items:center;gap:.5rem;
+    padding:.95rem 1.6rem;border-radius:6px;
+    font-weight:700;letter-spacing:.05em;text-transform:uppercase;font-size:.9rem;
+    transition:transform .15s ease, box-shadow .2s ease, background .2s;
+    box-shadow:0 8px 24px rgba(229,35,44,.25);
+  }
+  .btn-primary{background:var(--red);color:#fff}
+  .btn-primary:hover{background:var(--red-dark);transform:translateY(-2px)}
+  .btn-outline{background:transparent;border:2px solid #fff;color:#fff;box-shadow:none}
+  .btn-outline:hover{background:#fff;color:var(--ink)}
+  .btn-blue{background:var(--blue);color:var(--ink);box-shadow:0 8px 24px rgba(63,184,221,.3)}
+  .btn-blue:hover{background:var(--blue-dark);color:#fff;transform:translateY(-2px)}
+
+  /* ====== TOP ANNOUNCEMENT BAR ====== */
+  .announce{
+    background:linear-gradient(90deg,var(--red),#a3121a);
+    color:#fff;text-align:center;font-weight:600;font-size:.85rem;
+    padding:.6rem 1rem;letter-spacing:.04em;text-transform:uppercase;
+  }
+  .announce a{text-decoration:underline}
+
+  /* ====== HEADER ====== */
+  .header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(11,18,32,0.92);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:.85rem 1.25rem;max-width:1240px;margin:0 auto;gap:1rem;
+  }
+  .brand{display:flex;align-items:center;gap:.75rem}
+  .brand img{height:50px;width:auto}
+  .brand-text{font-family:'Anton',sans-serif;font-size:1.4rem;letter-spacing:.04em;line-height:1}
+  .brand-text small{display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:.65rem;letter-spacing:.18em;color:var(--blue);margin-top:2px}
+  .navlinks{display:none;gap:1.8rem;font-weight:600;font-size:.92rem;letter-spacing:.04em;text-transform:uppercase}
+  .navlinks a{position:relative;padding:.25rem 0}
+  .navlinks a::after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:0;background:var(--red);transition:width .25s}
+  .navlinks a:hover::after{width:100%}
+  .nav-cta{display:none}
+  .menu-btn{display:flex;flex-direction:column;gap:5px;padding:.5rem;background:none;border:none}
+  .menu-btn span{width:24px;height:2px;background:#fff;border-radius:2px;transition:transform .25s,opacity .2s}
+  .menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-btn.open span:nth-child(2){opacity:0}
+  .menu-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .mobile-menu{display:none;flex-direction:column;background:var(--ink-2);padding:1rem 1.25rem 1.5rem;border-top:1px solid var(--line)}
+  .mobile-menu.open{display:flex}
+  .mobile-menu a{padding:.85rem 0;border-bottom:1px solid var(--line);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+  .mobile-menu .btn{margin-top:1rem;justify-content:center}
+  @media (min-width: 900px){
+    .navlinks{display:flex}
+    .nav-cta{display:inline-flex}
+    .menu-btn{display:none}
+  }
+
+  /* ====== HERO ====== */
+  .hero{
+    position:relative;
+    min-height:88vh;
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:4rem 1.25rem 5rem;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse at 50% 20%, rgba(229,35,44,0.25), transparent 60%),
+      radial-gradient(ellipse at 75% 70%, rgba(63,184,221,0.20), transparent 55%),
+      radial-gradient(ellipse at 20% 80%, rgba(255,200,87,0.10), transparent 55%),
+      linear-gradient(180deg, #050912 0%, #0B1220 60%, #0B1220 100%);
+  }
+  .stars{position:absolute;inset:0;pointer-events:none;opacity:.65}
+  .hero-inner{position:relative;z-index:2;max-width:920px}
+  .hero img.logo{width:clamp(180px,28vw,280px);margin:0 auto 1.2rem;filter:drop-shadow(0 10px 40px rgba(0,0,0,.5))}
+  .eyebrow{display:inline-block;color:var(--blue);font-weight:700;letter-spacing:.4em;font-size:.78rem;text-transform:uppercase;margin-bottom:1rem;padding:.4rem .9rem;border:1px solid var(--blue);border-radius:99px}
+  .hero h1{margin-bottom:.8rem}
+  .hero h1 .red{color:var(--red)}
+  .hero h1 .blue{color:var(--blue)}
+  .hero p.lede{font-size:clamp(1rem,1.6vw,1.2rem);color:#cfd6e6;max-width:640px;margin:0 auto 1.6rem}
+  .hero-ctas{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+  .badges{display:flex;justify-content:center;gap:1.4rem;flex-wrap:wrap;margin-top:2.6rem;color:#9aa5bd;font-size:.78rem;text-transform:uppercase;letter-spacing:.18em}
+  .badges span{display:inline-flex;align-items:center;gap:.4rem}
+  .badges span::before{content:"★";color:var(--gold)}
+
+  /* ====== COUNTDOWN ====== */
+  .countdown{
+    background:linear-gradient(90deg,#0e1730,#16213d);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:2rem 1rem;text-align:center;
+  }
+  .countdown-label{font-family:'Anton',sans-serif;font-size:clamp(1.2rem,2vw,1.6rem);letter-spacing:.05em}
+  .countdown-label span{color:var(--red)}
+  .countdown-grid{display:flex;justify-content:center;gap:.7rem;margin-top:1rem;flex-wrap:wrap}
+  .cd-cell{background:rgba(255,255,255,0.04);border:1px solid var(--line);border-radius:10px;padding:.9rem 1.3rem;min-width:90px}
+  .cd-num{font-family:'Anton',sans-serif;font-size:clamp(1.8rem,3.4vw,2.6rem);color:#fff;line-height:1}
+  .cd-unit{display:block;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gray);margin-top:4px}
+
+  /* ====== SECTIONS ====== */
+  section{padding:5rem 0;position:relative}
+  .section-tag{color:var(--blue);font-size:.78rem;letter-spacing:.4em;text-transform:uppercase;font-weight:700;margin-bottom:.6rem;display:inline-block}
+  .section-title{margin-bottom:1.2rem}
+  .section-title .red{color:var(--red)}
+  .section-title .blue{color:var(--blue)}
+  .lead{color:#bcc4d6;max-width:720px;font-size:1.05rem}
+
+  /* ====== ABOUT ====== */
+  .about{background:var(--ink)}
+  .about-grid{display:grid;grid-template-columns:1fr;gap:2.5rem;align-items:center}
+  @media (min-width:900px){.about-grid{grid-template-columns:1.05fr 1fr}}
+  .about-copy p{margin-bottom:1rem;color:#cdd4e3}
+  .about-copy strong{color:#fff}
+  .about-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.4rem}
+  .tag{background:rgba(63,184,221,0.10);color:var(--blue);border:1px solid rgba(63,184,221,0.35);padding:.4rem .8rem;border-radius:99px;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+  .gallery-collage{display:grid;grid-template-columns:repeat(3,1fr);gap:.45rem;border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+  .gallery-collage img{aspect-ratio:1/1;object-fit:cover;width:100%;height:100%;transition:transform .5s ease}
+  .gallery-collage img:hover{transform:scale(1.06)}
+
+  /* ====== FULL GALLERY ====== */
+  .gallery-section{background:linear-gradient(180deg,var(--ink) 0%,#080d18 100%)}
+  .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.7rem;margin-top:2rem}
+  .gallery-grid figure{position:relative;overflow:hidden;border-radius:8px;aspect-ratio:1/1;cursor:zoom-in}
+  .gallery-grid img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+  .gallery-grid figure:hover img{transform:scale(1.08)}
+  .gallery-grid figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,0.6));opacity:0;transition:opacity .3s}
+  .gallery-grid figure:hover::after{opacity:1}
+
+  /* ====== LIGHTBOX ====== */
+  .lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:999;display:none;align-items:center;justify-content:center;padding:2rem}
+  .lightbox.open{display:flex}
+  .lightbox img{max-width:92vw;max-height:88vh;border-radius:8px;box-shadow:0 30px 80px rgba(0,0,0,0.8)}
+  .lightbox-close{position:absolute;top:1.2rem;right:1.5rem;font-size:2rem;color:#fff;background:none;border:none;cursor:pointer;padding:.5rem;line-height:1}
+
+  /* ====== HEROES (DISCOUNTS) ====== */
+  .heroes{background:linear-gradient(180deg,#080d18,#0B1220)}
+  .heroes-banner{
+    background:linear-gradient(90deg,rgba(229,35,44,.12),rgba(63,184,221,.12));
+    border:1px solid var(--line);
+    border-radius:18px;padding:3rem 2rem;text-align:center;
+    backdrop-filter:blur(6px);
+  }
+  .heroes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1.4rem;margin-top:2.5rem}
+  .hero-card{display:flex;flex-direction:column;align-items:center;text-align:center;padding:1rem;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid var(--line);transition:transform .25s,border-color .25s}
+  .hero-card:hover{transform:translateY(-4px);border-color:var(--blue)}
+  .hero-card img{width:72px;height:72px;object-fit:contain;margin-bottom:.7rem;filter:drop-shadow(0 4px 12px rgba(0,0,0,.3))}
+  .hero-card h4{font-size:1.05rem;color:#fff}
+  .discount-note{font-size:.82rem;color:var(--gray);margin-top:1.6rem;font-style:italic}
+
+  /* ====== OCCASIONS ====== */
+  .occasions{background:var(--ink)}
+  .occ-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:2rem}
+  .occ-card{
+    position:relative;border-radius:14px;overflow:hidden;
+    aspect-ratio:4/5;min-height:280px;
+    display:flex;flex-direction:column;justify-content:flex-end;
+    padding:1.4rem;border:1px solid var(--line);
+    transition:transform .3s,border-color .3s;
+  }
+  .occ-card:hover{transform:translateY(-6px);border-color:var(--red)}
+  .occ-bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center}
+  .occ-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,18,32,0.2) 0%,rgba(11,18,32,0.9) 100%)}
+  .occ-card > *:not(.occ-bg){position:relative;z-index:1}
+  .occ-card h3{color:#fff;margin-bottom:.2rem}
+  .occ-card p{color:#dfe5f1;font-size:.92rem}
+  .occ-1 .occ-bg{background-image:url("assets/images/gallery-08.jpeg")}
+  .occ-2 .occ-bg{background-image:url("assets/images/gallery-04.jpeg")}
+  .occ-3 .occ-bg{background-image:url("assets/images/gallery-09.jpeg")}
+  .occ-4 .occ-bg{background-image:url("assets/images/gallery-05.jpeg")}
+  .occ-5 .occ-bg{background-image:url("assets/images/gallery-06.jpeg")}
+  .occ-6 .occ-bg{background-image:url("assets/images/gallery-07.jpeg")}
+
+  /* ====== PRODUCTS ====== */
+  .products{background:linear-gradient(180deg,var(--ink),#070b14)}
+  .prod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin-top:2.4rem}
+  .prod-card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:1.6rem 1.2rem;
+    text-align:center;
+    transition:transform .25s,border-color .25s,background .25s;
+  }
+  .prod-card:hover{transform:translateY(-5px);border-color:var(--red);background:rgba(229,35,44,0.06)}
+  .prod-icon{font-size:2.4rem;margin-bottom:.6rem}
+  .prod-card h4{font-size:1.15rem;color:#fff;margin-bottom:.4rem}
+  .prod-card p{color:var(--gray);font-size:.85rem;min-height:42px}
+  .prod-btn{margin-top:1rem;font-size:.78rem;letter-spacing:.1em;padding:.6rem 1rem;background:transparent;color:var(--blue);border:1px solid var(--blue);border-radius:6px;font-weight:600;text-transform:uppercase;transition:all .2s}
+  .prod-btn:hover{background:var(--blue);color:var(--ink)}
+
+  .distributors{margin-top:3.5rem;display:flex;flex-direction:column;align-items:center}
+  .distributors h3{color:var(--blue);margin-bottom:1.5rem;font-size:1.2rem;letter-spacing:.2em}
+  .dist-row{display:flex;gap:2.5rem;flex-wrap:wrap;justify-content:center;align-items:center}
+  .dist-row img{height:90px;width:auto;background:#fff;padding:.8rem 1.2rem;border-radius:10px;transition:transform .25s}
+  .dist-row img:hover{transform:scale(1.05)}
+
+  /* ====== LOCATIONS ====== */
+  .locations{background:#070b14}
+  .loc-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;margin-top:2rem}
+  @media(min-width:900px){.loc-grid{grid-template-columns:repeat(3,1fr)}}
+  .loc-card{background:var(--ink-2);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+  .loc-num{background:var(--red);color:#fff;font-family:'Anton',sans-serif;letter-spacing:.05em;font-size:.85rem;padding:.5rem 1rem;display:inline-block}
+  .loc-body{padding:1.4rem 1.4rem 1.2rem}
+  .loc-body h4{color:#fff;font-size:1.15rem;margin-bottom:.5rem}
+  .loc-body p{color:#cdd4e3;font-size:.95rem;margin-bottom:1rem;min-height:60px}
+  .loc-body a.btn{font-size:.78rem;padding:.65rem 1rem}
+  .loc-map{aspect-ratio:16/10;border:none;width:100%}
+
+  /* ====== HOURS ====== */
+  .hours-section{background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .hours-grid{display:grid;grid-template-columns:1fr;gap:2rem;align-items:center}
+  @media(min-width:900px){.hours-grid{grid-template-columns:1fr 1fr}}
+  .hours-card{background:rgba(255,255,255,0.04);border:1px solid var(--line);border-radius:14px;padding:1.6rem}
+  .hours-card h4{color:var(--blue);font-size:1rem;letter-spacing:.15em;margin-bottom:.8rem;font-family:'Anton',sans-serif}
+  .hours-card ul{list-style:none}
+  .hours-card li{display:flex;justify-content:space-between;padding:.55rem 0;border-bottom:1px dashed var(--line);font-size:.95rem}
+  .hours-card li:last-child{border-bottom:none}
+  .hours-card li strong{color:#fff}
+  .appointment-note{margin-top:1.5rem;padding:1rem;background:rgba(229,35,44,0.08);border-left:3px solid var(--red);border-radius:6px;font-size:.92rem;color:#e6ebf6}
+
+  /* ====== TESTIMONIALS ====== */
+  .testimonials{background:var(--ink)}
+  .t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;margin-top:2.4rem}
+  .t-card{background:rgba(255,255,255,0.04);border:1px solid var(--line);border-radius:14px;padding:1.6rem}
+  .t-stars{color:var(--gold);margin-bottom:.6rem;letter-spacing:.1em}
+  .t-quote{color:#dfe5f1;font-style:italic;font-size:.98rem;margin-bottom:1rem;line-height:1.6}
+  .t-name{font-family:'Anton',sans-serif;color:var(--red);letter-spacing:.06em;font-size:1.1rem}
+
+  /* ====== PRE-ORDER CTA ====== */
+  .preorder-cta{
+    background:linear-gradient(135deg,var(--red) 0%,#8a0d14 100%);
+    text-align:center;padding:5rem 1.25rem;position:relative;overflow:hidden;
+  }
+  .preorder-cta::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 30% 50%,rgba(255,200,87,0.15),transparent 50%),
+               radial-gradient(circle at 70% 70%,rgba(63,184,221,0.15),transparent 50%);
+  }
+  .preorder-cta > *{position:relative}
+  .preorder-cta h2{color:#fff;margin-bottom:.6rem}
+  .preorder-cta p{color:#ffe6e8;max-width:600px;margin:0 auto 1.6rem;font-size:1.05rem}
+  .coming-soon-tag{display:inline-block;background:rgba(0,0,0,0.25);color:var(--gold);padding:.4rem 1rem;border-radius:99px;font-size:.78rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-top:1.2rem}
+
+  /* ====== CONTACT ====== */
+  .contact{background:#070b14}
+  .contact-grid{display:grid;grid-template-columns:1fr;gap:2rem;margin-top:2.4rem}
+  @media(min-width:900px){.contact-grid{grid-template-columns:1fr 1.2fr}}
+  .contact-info{display:flex;flex-direction:column;gap:1rem}
+  .contact-item{display:flex;gap:1rem;align-items:flex-start;padding:1.2rem;background:rgba(255,255,255,0.04);border:1px solid var(--line);border-radius:12px}
+  .contact-item .ci-icon{font-size:1.6rem;flex-shrink:0;color:var(--red)}
+  .contact-item h4{color:#fff;font-size:1rem;margin-bottom:.2rem;letter-spacing:.1em}
+  .contact-item p,.contact-item a{color:#cdd4e3;font-size:.95rem}
+  .contact-item a:hover{color:var(--blue)}
+  .contact-form{background:rgba(255,255,255,0.04);border:1px solid var(--line);border-radius:14px;padding:1.8rem}
+  .form-row{display:grid;grid-template-columns:1fr;gap:1rem;margin-bottom:1rem}
+  @media(min-width:600px){.form-row.two{grid-template-columns:1fr 1fr}}
+  .form-row label{display:block;font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gray);margin-bottom:.4rem;font-weight:600}
+  .form-row input,.form-row select,.form-row textarea{
+    width:100%;padding:.85rem 1rem;background:rgba(0,0,0,0.25);
+    border:1px solid var(--line);border-radius:8px;color:#fff;font-family:inherit;font-size:.95rem;
+    transition:border-color .2s,background .2s;
+  }
+  .form-row input:focus,.form-row select:focus,.form-row textarea:focus{outline:none;border-color:var(--blue);background:rgba(0,0,0,0.4)}
+  .form-row textarea{min-height:120px;resize:vertical}
+  .form-submit{width:100%;margin-top:.4rem}
+
+  /* ====== FOOTER ====== */
+  .footer{background:#050912;padding:3.5rem 0 1.5rem;border-top:1px solid var(--line)}
+  .footer-grid{display:grid;grid-template-columns:1fr;gap:2rem;margin-bottom:2.5rem}
+  @media(min-width:700px){.footer-grid{grid-template-columns:1.4fr 1fr 1fr}}
+  .footer-brand img{height:60px;margin-bottom:1rem}
+  .footer-brand p{color:var(--gray);font-size:.9rem;max-width:340px}
+  .footer h5{color:var(--blue);font-family:'Anton',sans-serif;letter-spacing:.15em;font-size:1rem;margin-bottom:1rem}
+  .footer ul{list-style:none}
+  .footer li{margin-bottom:.5rem}
+  .footer li a{color:#bcc4d6;font-size:.92rem;transition:color .2s}
+  .footer li a:hover{color:#fff}
+  .social{display:flex;gap:.7rem;margin-top:1.2rem}
+  .social a{width:38px;height:38px;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:50%;transition:background .2s,transform .2s}
+  .social a:hover{background:var(--red);transform:translateY(-2px)}
+  .social svg{width:18px;height:18px;fill:#fff}
+
+  /* ====== DISCLAIMER & FOOTER LEGAL ====== */
+  .disclaimer{
+    background:#020407;padding:1.8rem 1.25rem;
+    border-top:1px solid var(--line);font-size:.78rem;color:#7a8299;line-height:1.7;text-align:left;
+  }
+  .disclaimer .container{max-width:1240px}
+  .disclaimer strong{color:#c0c8da}
+  .legal-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:1.2rem;margin-top:1.2rem;border-top:1px solid var(--line);font-size:.82rem;color:var(--gray)}
+  .legal-row a{color:var(--gray)}
+  .legal-row a:hover{color:#fff}
+
+  /* ====== AGE GATE MODAL ====== */
+  .age-gate{
+    position:fixed;inset:0;z-index:1000;background:rgba(5,9,18,0.96);
+    display:flex;align-items:center;justify-content:center;padding:2rem;
+    backdrop-filter:blur(8px);
+  }
+  .age-gate.hidden{display:none}
+  .age-modal{
+    background:linear-gradient(180deg,#0e1730,#16213d);
+    border:1px solid var(--line);border-radius:20px;
+    padding:2.5rem 2rem;max-width:480px;text-align:center;
+    box-shadow:0 30px 80px rgba(0,0,0,0.7);
+  }
+  .age-modal img{width:90px;margin:0 auto 1rem}
+  .age-modal h3{color:#fff;margin-bottom:.6rem}
+  .age-modal p{color:#cdd4e3;font-size:.95rem;margin-bottom:1.8rem}
+  .age-modal .btn-row{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+  .age-modal .btn{padding:.85rem 2rem}
+
+  /* ====== ANIMATIONS ====== */
+  @keyframes twinkle{0%,100%{opacity:.3}50%{opacity:1}}
+  .star-dot{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;animation:twinkle 3s infinite}
+
+  @keyframes fade-up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+  .reveal{opacity:0}
+  .reveal.in{animation:fade-up .8s ease forwards}
+
+  /* utility */
+  .center{text-align:center}
+  .mt-2{margin-top:1rem}
+  .mt-4{margin-top:2.5rem}
+
+  /* ====== CHAT PROMPT CARD (in contact section) ====== */
+  .chat-prompt-card{
+    background:linear-gradient(135deg,rgba(229,35,44,0.10),rgba(63,184,221,0.10));
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:2.4rem 1.8rem;
+    text-align:center;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    min-height:340px;
+  }
+  .chat-prompt-icon{
+    font-size:3rem;margin-bottom:.6rem;
+    width:80px;height:80px;border-radius:50%;
+    background:linear-gradient(135deg,var(--red),var(--red-dark));
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 12px 30px rgba(229,35,44,0.35);
+  }
+  .chat-prompt-card h3{color:#fff;margin-bottom:.6rem}
+  .chat-prompt-card p{color:#cdd4e3;font-size:.95rem;max-width:380px;margin-bottom:1.4rem}
+  .chat-prompt-note{font-size:.82rem !important;color:var(--gray) !important;margin-top:1rem !important;margin-bottom:0 !important}
+  .chat-prompt-note a{color:var(--blue);text-decoration:underline}
+
+  /* ====== FLOATING CHAT WIDGET ====== */
+  .chat-fab{
+    position:fixed;
+    bottom:24px;right:24px;
+    z-index:900;
+    width:64px;height:64px;
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--red),var(--red-dark));
+    border:none;
+    color:#fff;
+    cursor:pointer;
+    box-shadow:0 10px 30px rgba(229,35,44,0.45), 0 4px 12px rgba(0,0,0,0.25);
+    display:flex;align-items:center;justify-content:center;
+    transition:transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s;
+    animation:fab-pulse 2.4s ease-in-out infinite;
+  }
+  .chat-fab:hover{transform:scale(1.08);box-shadow:0 14px 40px rgba(229,35,44,0.6)}
+  .chat-fab.hidden{transform:scale(0);opacity:0;pointer-events:none}
+  .chat-fab svg{width:28px;height:28px;fill:#fff}
+  .chat-fab-badge{
+    position:absolute;top:-2px;right:-2px;
+    background:var(--blue);color:var(--ink);
+    width:22px;height:22px;border-radius:50%;
+    font-size:.7rem;font-weight:800;
+    display:flex;align-items:center;justify-content:center;
+    border:2px solid var(--ink);
+  }
+  @keyframes fab-pulse{
+    0%,100%{box-shadow:0 10px 30px rgba(229,35,44,0.45), 0 4px 12px rgba(0,0,0,0.25), 0 0 0 0 rgba(229,35,44,0.5)}
+    50%{box-shadow:0 10px 30px rgba(229,35,44,0.45), 0 4px 12px rgba(0,0,0,0.25), 0 0 0 14px rgba(229,35,44,0)}
+  }
+
+  .chat-panel{
+    position:fixed;
+    bottom:104px;right:24px;
+    z-index:950;
+    width:380px;max-width:calc(100vw - 32px);
+    height:560px;max-height:calc(100vh - 120px);
+    background:linear-gradient(180deg,#0e1730,#16213d);
+    border:1px solid var(--line);
+    border-radius:18px;
+    box-shadow:0 25px 60px rgba(0,0,0,0.55), 0 8px 20px rgba(0,0,0,0.35);
+    display:flex;flex-direction:column;overflow:hidden;
+    transform:translateY(20px) scale(.96);
+    opacity:0;pointer-events:none;
+    transition:transform .25s cubic-bezier(.34,1.56,.64,1), opacity .2s;
+  }
+  .chat-panel.open{transform:translateY(0) scale(1);opacity:1;pointer-events:auto}
+
+  .chat-header{
+    background:linear-gradient(135deg,var(--red),#8a0d14);
+    padding:1rem 1.2rem;
+    display:flex;align-items:center;gap:.8rem;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+  }
+  .chat-avatar{
+    width:42px;height:42px;border-radius:50%;
+    background:#fff;
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;overflow:hidden;
+  }
+  .chat-avatar img{width:36px;height:36px;object-fit:contain}
+  .chat-header-text{flex:1;color:#fff}
+  .chat-header-text strong{display:block;font-size:.98rem;letter-spacing:.02em}
+  .chat-header-text small{display:flex;align-items:center;gap:.4rem;font-size:.75rem;color:#ffd1d4;margin-top:2px}
+  .chat-header-text small::before{content:"";width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 8px #4ade80}
+  .chat-close{
+    background:rgba(255,255,255,0.15);border:none;color:#fff;
+    width:32px;height:32px;border-radius:50%;
+    font-size:1.2rem;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    transition:background .2s;
+  }
+  .chat-close:hover{background:rgba(255,255,255,0.3)}
+
+  .chat-body{
+    flex:1;overflow-y:auto;
+    padding:1.2rem;
+    display:flex;flex-direction:column;gap:.7rem;
+    background:
+      radial-gradient(circle at 20% 30%, rgba(63,184,221,0.06), transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(229,35,44,0.06), transparent 50%);
+  }
+  .chat-msg{
+    max-width:85%;padding:.7rem 1rem;border-radius:14px;
+    font-size:.9rem;line-height:1.5;
+    animation:msg-in .35s ease;
+  }
+  .chat-msg.from-them{
+    background:rgba(255,255,255,0.08);
+    color:#e6ebf6;
+    border-bottom-left-radius:4px;
+    align-self:flex-start;
+  }
+  .chat-msg.from-you{
+    background:linear-gradient(135deg,var(--blue),var(--blue-dark));
+    color:#fff;
+    border-bottom-right-radius:4px;
+    align-self:flex-end;
+  }
+  @keyframes msg-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  .chat-quick{
+    display:flex;flex-wrap:wrap;gap:.4rem;
+    margin-top:.4rem;
+  }
+  .chat-quick button{
+    background:rgba(63,184,221,0.12);
+    border:1px solid rgba(63,184,221,0.4);
+    color:var(--blue);
+    padding:.45rem .8rem;
+    border-radius:99px;
+    font-size:.78rem;
+    cursor:pointer;
+    transition:background .2s,color .2s;
+  }
+  .chat-quick button:hover{background:var(--blue);color:var(--ink)}
+
+  .chat-form{
+    background:rgba(0,0,0,0.25);
+    padding:.8rem 1rem 1rem;
+    border-top:1px solid rgba(255,255,255,0.08);
+    display:flex;flex-direction:column;gap:.5rem;
+  }
+  .chat-form input,.chat-form select,.chat-form textarea{
+    width:100%;padding:.6rem .8rem;
+    background:rgba(255,255,255,0.05);
+    border:1px solid var(--line);border-radius:8px;
+    color:#fff;font-family:inherit;font-size:.88rem;
+    transition:border-color .2s,background .2s;
+  }
+  .chat-form input::placeholder,.chat-form textarea::placeholder{color:#7a8299}
+  .chat-form input:focus,.chat-form select:focus,.chat-form textarea:focus{outline:none;border-color:var(--blue);background:rgba(0,0,0,0.35)}
+  .chat-form .row-2{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+  .chat-form textarea{min-height:70px;resize:none}
+  .chat-send{
+    background:linear-gradient(135deg,var(--red),var(--red-dark));
+    color:#fff;border:none;border-radius:8px;
+    padding:.7rem 1rem;font-weight:700;
+    letter-spacing:.05em;text-transform:uppercase;font-size:.82rem;
+    cursor:pointer;
+    display:flex;align-items:center;justify-content:center;gap:.4rem;
+    transition:transform .15s,box-shadow .2s;
+    box-shadow:0 6px 18px rgba(229,35,44,0.35);
+  }
+  .chat-send:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(229,35,44,0.5)}
+  .chat-foot{
+    font-size:.7rem;color:var(--gray);text-align:center;
+    padding:.5rem 1rem .8rem;
+  }
+
+  /* Mobile: fullscreen */
+  @media (max-width: 520px){
+    .chat-panel{
+      bottom:0;right:0;left:0;top:0;
+      width:100%;max-width:100%;
+      height:100%;max-height:100%;
+      border-radius:0;
+    }
+    .chat-fab{bottom:18px;right:18px;width:58px;height:58px}
+  }
+
+  /* ====== CHAT: THANK-YOU STATE ====== */
+  .chat-thanks{
+    flex:1;
+    display:none;flex-direction:column;align-items:center;justify-content:center;
+    padding:2.5rem 1.5rem;text-align:center;gap:.9rem;
+    background:radial-gradient(circle at 50% 30%, rgba(63,184,221,0.10), transparent 60%);
+  }
+  .chat-panel.sent .chat-body,
+  .chat-panel.sent .chat-form{display:none}
+  .chat-panel.sent .chat-thanks{display:flex}
+  .chat-thanks-icon{
+    width:78px;height:78px;border-radius:50%;
+    background:linear-gradient(135deg,#4ade80,#22c55e);
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:2.4rem;font-weight:700;
+    box-shadow:0 10px 30px rgba(34,197,94,0.4);
+    animation:thanks-pop .45s cubic-bezier(.34,1.56,.64,1);
+  }
+  @keyframes thanks-pop{from{transform:scale(.4);opacity:0}to{transform:scale(1);opacity:1}}
+  .chat-thanks h4{
+    font-family:'Anton',sans-serif;color:#fff;font-size:1.5rem;letter-spacing:.04em;
+    margin:.3rem 0 0;
+  }
+  .chat-thanks p{color:#cdd4e3;font-size:.92rem;line-height:1.5;max-width:280px}
+  .chat-thanks .chat-thanks-sub{font-size:.78rem;color:var(--gray);margin-top:.4rem}
+  .chat-thanks .close-btn{
+    margin-top:.7rem;
+    background:rgba(255,255,255,0.08);border:1px solid var(--line);
+    color:#fff;padding:.6rem 1.4rem;border-radius:99px;
+    font-size:.82rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+    cursor:pointer;transition:background .2s;
+  }
+  .chat-thanks .close-btn:hover{background:rgba(255,255,255,0.16)}
+
+  /* ====== HERO MOTION: RISING EMBERS + FIREWORK BURSTS ====== */
+  .firework-canvas{
+    position:absolute;inset:0;width:100%;height:100%;
+    pointer-events:none;z-index:1;
+    mix-blend-mode:screen;
+  }
+  .embers{
+    position:absolute;inset:0;overflow:hidden;
+    pointer-events:none;z-index:1;
+  }
+  .ember{
+    position:absolute;bottom:-12px;
+    width:3px;height:3px;border-radius:50%;
+    background:#FFC857;
+    box-shadow:0 0 10px 2px rgba(255,200,87,0.7);
+    animation:ember-rise linear infinite;
+    will-change:transform,opacity;
+  }
+  .ember.red{ background:#ff5a4a; box-shadow:0 0 10px 2px rgba(229,35,44,0.7); }
+  .ember.blue{ background:#7ee3ff; box-shadow:0 0 10px 2px rgba(63,184,221,0.7); }
+  .ember.white{ background:#fff; box-shadow:0 0 10px 2px rgba(255,255,255,0.55); }
+  @keyframes ember-rise{
+    0%   { transform:translateY(0) translateX(0); opacity:0; }
+    10%  { opacity:1; }
+    85%  { opacity:1; }
+    100% { transform:translateY(-100vh) translateX(40px); opacity:0; }
+  }
+
+  /* ====== MARQUEE BRAND STRIP ====== */
+  .marquee{
+    background:linear-gradient(90deg,#0e1730,#070d18 30%,#070d18 70%,#0e1730);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    overflow:hidden;
+    padding:1rem 0;
+    position:relative;
+  }
+  .marquee::before,.marquee::after{
+    content:"";position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none;
+  }
+  .marquee::before{ left:0; background:linear-gradient(90deg,#070d18,transparent); }
+  .marquee::after{  right:0; background:linear-gradient(-90deg,#070d18,transparent); }
+  .marquee-track{
+    display:flex;width:max-content;
+    animation:marquee 42s linear infinite;
+  }
+  .marquee:hover .marquee-track{ animation-play-state:paused; }
+  .marquee-item{
+    display:inline-flex;align-items:center;gap:.6rem;
+    padding:0 2rem;
+    font-family:'Anton',sans-serif;
+    font-size:1.05rem;letter-spacing:.18em;text-transform:uppercase;
+    color:#cfd6e6;white-space:nowrap;
+  }
+  .marquee-item .mq-icon{font-size:1.15rem}
+  .marquee-item::after{
+    content:"✦";color:var(--red);margin-left:2rem;font-size:.85rem;opacity:.8;
+  }
+  @keyframes marquee{
+    0%   { transform:translateX(0); }
+    100% { transform:translateX(-50%); }
+  }
+
+  /* ====== REDUCED-MOTION FALLBACK ====== */
+  @media (prefers-reduced-motion: reduce){
+    .ember, .marquee-track, .star-dot{ animation:none !important; }
+    .firework-canvas{ display:none !important; }
+    .chat-fab{ animation:none !important; }
+  }
+
+  /* ====== CHAT: SENDING + ERROR STATES ====== */
+  .chat-send[disabled]{opacity:.6;cursor:not-allowed;transform:none !important}
+  .chat-thanks.is-error .chat-thanks-icon{
+    background:linear-gradient(135deg,#ef4444,#b91c1c);
+    box-shadow:0 10px 30px rgba(239,68,68,0.4);
+  }
+  .chat-thanks.is-error h4{color:#fff}
+  .chat-thanks.is-error .chat-thanks-sub{display:none}
+  .chat-thanks .retry-btn{
+    margin-top:.4rem;
+    background:linear-gradient(135deg,var(--red),var(--red-dark));
+    color:#fff;border:none;padding:.6rem 1.4rem;border-radius:99px;
+    font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    cursor:pointer;display:none;
+  }
+  .chat-thanks.is-error .retry-btn{display:inline-block}
+  .chat-thanks.is-error .close-btn{display:none}
+  .chat-spinner{
+    width:46px;height:46px;border-radius:50%;
+    border:4px solid rgba(63,184,221,.25);
+    border-top-color:var(--blue);
+    animation:spin 0.8s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .chat-thanks.is-sending .chat-thanks-icon{display:none}
+  .chat-thanks.is-sending .chat-spinner{display:block}
+  .chat-thanks .chat-spinner{display:none}
+  .chat-thanks.is-sending h4{color:#fff}
+  .chat-thanks.is-sending p{color:var(--gray)}
+  .chat-thanks.is-sending .close-btn,
+  .chat-thanks.is-sending .chat-thanks-sub{display:none}
+</style>
+</head>
+<body>
+
+<!-- AGE GATE -->
+<div class="age-gate" id="ageGate">
+  <div class="age-modal">
+    <img src="assets/images/logo.png" alt="G&amp;C Fireworks">
+    <h3>Welcome to G&amp;C Fireworks</h3>
+    <p>You must be <strong>18 or older</strong> to purchase consumer fireworks in Arkansas. By entering this site, you confirm you meet your state's minimum legal age and will use fireworks responsibly and in compliance with local laws.</p>
+    <div class="btn-row">
+      <button class="btn btn-primary" id="ageYes">I am 18+ — Enter</button>
+      <a href="https://www.google.com" class="btn btn-outline">Exit</a>
+    </div>
+  </div>
+</div>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce">
+  🎆 Pre-orders for 4th of July now open — Curbside pickup available — <a href="#contact">Reserve yours</a>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="nav">
+    <a class="brand" href="#top" aria-label="G&amp;C Fireworks home">
+      <img src="assets/images/logo.png" alt="G&amp;C Fireworks logo">
+      <div class="brand-text">G&amp;C Fireworks<small>Fayetteville, AR</small></div>
+    </a>
+    <nav class="navlinks" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#locations">Locations</a>
+      <a href="#hours">Hours</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="tel:+14793462668" class="btn btn-primary nav-cta">Call (479) 346-2668</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#locations">Locations</a>
+    <a href="#hours">Hours</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:+14793462668" class="btn btn-primary">Call (479) 346-2668</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="stars" id="stars"></div>
+  <div class="embers" id="embers"></div>
+  <canvas class="firework-canvas" id="fireworks" aria-hidden="true"></canvas>
+  <div class="hero-inner">
+    <img src="assets/images/hero.png" alt="G&amp;C Fireworks" class="logo">
+    <span class="eyebrow">Family-Owned · Veteran-Led · Fayetteville</span>
+    <h1>Create <span class="red">Magical</span> Memories<br>This <span class="blue">Fourth of July</span></h1>
+    <p class="lede">Northwest Arkansas's go-to fireworks store. A huge selection of top-quality fireworks for every celebration — from the Fourth to weddings, gender reveals, and beyond.</p>
+    <div class="hero-ctas">
+      <a href="#products" class="btn btn-primary">Browse Products</a>
+      <a href="#locations" class="btn btn-outline">Find a Location</a>
+    </div>
+    <div class="badges">
+      <span>Family Owned</span>
+      <span>Veteran Led</span>
+      <span>Top-Quality Brands</span>
+      <span>10% Hero Discount</span>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTDOWN -->
+<div class="countdown">
+  <div class="countdown-label">Countdown to the <span>4th of July</span></div>
+  <div class="countdown-grid" id="countdown">
+    <div class="cd-cell"><span class="cd-num" id="cd-d">00</span><span class="cd-unit">Days</span></div>
+    <div class="cd-cell"><span class="cd-num" id="cd-h">00</span><span class="cd-unit">Hours</span></div>
+    <div class="cd-cell"><span class="cd-num" id="cd-m">00</span><span class="cd-unit">Minutes</span></div>
+    <div class="cd-cell"><span class="cd-num" id="cd-s">00</span><span class="cd-unit">Seconds</span></div>
+  </div>
+</div>
+
+
+<!-- BRAND MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack">
+    <!-- Group A -->
+    <span class="marquee-item"><span class="mq-icon">🎆</span>Family Owned</span>
+    <span class="marquee-item"><span class="mq-icon">⭐</span>Veteran Led</span>
+    <span class="marquee-item"><span class="mq-icon">💥</span>Top Quality Brands</span>
+    <span class="marquee-item"><span class="mq-icon">🇺🇸</span>Fayetteville's Best</span>
+    <span class="marquee-item"><span class="mq-icon">📍</span>Three Locations</span>
+    <span class="marquee-item"><span class="mq-icon">🛒</span>Pre-Orders Open</span>
+    <span class="marquee-item"><span class="mq-icon">🚗</span>Curbside Pickup</span>
+    <span class="marquee-item"><span class="mq-icon">❤️</span>10% Hero Discount</span>
+    <span class="marquee-item"><span class="mq-icon">🎇</span>Red Rhino</span>
+    <span class="marquee-item"><span class="mq-icon">✨</span>Spirit 76</span>
+    <!-- Group B (duplicate for seamless loop) -->
+    <span class="marquee-item"><span class="mq-icon">🎆</span>Family Owned</span>
+    <span class="marquee-item"><span class="mq-icon">⭐</span>Veteran Led</span>
+    <span class="marquee-item"><span class="mq-icon">💥</span>Top Quality Brands</span>
+    <span class="marquee-item"><span class="mq-icon">🇺🇸</span>Fayetteville's Best</span>
+    <span class="marquee-item"><span class="mq-icon">📍</span>Three Locations</span>
+    <span class="marquee-item"><span class="mq-icon">🛒</span>Pre-Orders Open</span>
+    <span class="marquee-item"><span class="mq-icon">🚗</span>Curbside Pickup</span>
+    <span class="marquee-item"><span class="mq-icon">❤️</span>10% Hero Discount</span>
+    <span class="marquee-item"><span class="mq-icon">🎇</span>Red Rhino</span>
+    <span class="marquee-item"><span class="mq-icon">✨</span>Spirit 76</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <span class="section-tag">About G&amp;C Fireworks</span>
+        <h2 class="section-title">A <span class="red">Family-Owned,</span> <span class="blue">Veteran-Led</span> Tradition</h2>
+        <p>At <strong>G&amp;C Fireworks</strong>, family, community, and celebration are at the heart of everything we do. Though we're from Arkansas and Tennessee and have lived all over the state, Northwest Arkansas is home — with our family rooted throughout the valley and NWA.</p>
+        <p>Outside of fireworks, we serve our community through healthcare at Mercy, WRMC, and Snell Prosthetics &amp; Orthotics. But we wanted to create something special together that reflects our love for this community and the values of our country — and that vision became G&amp;C Fireworks.</p>
+        <p><strong>Greg is a veteran,</strong> and with military service running deep in both of our families, patriotism is in our blood. To us, fireworks are more than entertainment — they're a way to bring people together, honor traditions, and celebrate freedom.</p>
+        <p>We're proud to offer one of the best selections of fireworks in Fayetteville. Whether it's the Fourth of July, a family gathering, or a moment worth lighting up — we're here to help make it unforgettable.</p>
+        <div class="about-tags">
+          <span class="tag">Veteran Founded</span>
+          <span class="tag">Local to NWA</span>
+          <span class="tag">Community First</span>
+          <span class="tag">Top Brands</span>
+        </div>
+      </div>
+      <div class="gallery-collage reveal">
+        <img src="assets/images/gallery-01.jpeg" alt="Inside G&amp;C Fireworks">
+        <img src="assets/images/gallery-10.jpeg" alt="G&amp;C staff with fireworks assortment">
+        <img src="assets/images/gallery-03.webp" alt="G&amp;C Fireworks display">
+        <img src="assets/images/gallery-12.jpeg" alt="Fireworks selection">
+        <img src="assets/images/gallery-11.webp" alt="Fireworks variety">
+        <img src="assets/images/gallery-02.jpeg" alt="Fireworks at G&amp;C">
+        <img src="assets/images/gallery-04.jpeg" alt="Customer favorite">
+        <img src="assets/images/gallery-05.jpeg" alt="Aerial fireworks">
+        <img src="assets/images/gallery-13.jpeg" alt="Selection of fireworks">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HEROES / DISCOUNTS -->
+<section class="heroes">
+  <div class="container">
+    <div class="heroes-banner reveal">
+      <span class="section-tag">Honoring Our Local Heroes</span>
+      <h2 class="section-title">10% Off For Those Who <span class="red">Serve</span></h2>
+      <p class="lead center" style="margin:0 auto">As a thank you to the people who keep our community safe and well, we're proud to offer a 10% discount on your fireworks purchase.</p>
+      <div class="heroes-grid">
+        <div class="hero-card"><img src="assets/images/hero-firefighter.png" alt="Firefighters"><h4>Firefighters</h4></div>
+        <div class="hero-card"><img src="assets/images/hero-medical.png" alt="Medical personnel"><h4>Medical</h4></div>
+        <div class="hero-card"><img src="assets/images/hero-police.png" alt="Police"><h4>Police</h4></div>
+        <div class="hero-card"><img src="assets/images/hero-firstresp.png" alt="First Responders"><h4>First Responders</h4></div>
+        <div class="hero-card"><img src="assets/images/hero-veteran.png" alt="Veterans"><h4>Veterans</h4></div>
+      </div>
+      <p class="discount-note">Show valid ID in-store. Discounts cannot be combined or stacked with other offers.</p>
+    </div>
+  </div>
+</section>
+
+<!-- OCCASIONS -->
+<section class="occasions">
+  <div class="container">
+    <div class="center reveal" style="max-width:720px;margin:0 auto">
+      <span class="section-tag">Celebrate Special Moments</span>
+      <h2 class="section-title">Make Every Moment <span class="blue">Sparkle</span></h2>
+      <p class="lead" style="margin:0 auto">From the Fourth to weddings, gender reveals, and Diwali — we have the perfect fireworks for every occasion.</p>
+    </div>
+    <div class="occ-grid">
+      <article class="occ-card occ-1">
+        <div class="occ-bg" role="presentation"></div>
+        <h3>Fourth of July</h3>
+        <p>Light up the night with red, white, and blue.</p>
+      </article>
+      <article class="occ-card occ-2">
+        <div class="occ-bg" role="presentation"></div>
+        <h3>Weddings</h3>
+        <p>Make your big day shine brighter with a magical display.</p>
+      </article>
+      <article class="occ-card occ-3">
+        <div class="occ-bg" role="presentation"></div>
+        <h3>Gender Reveals</h3>
+        <p>Pink or blue — reveal the moment in style.</p>
+      </article>
+      <article class="occ-card occ-4">
+        <div class="occ-bg" role="presentation"></div>
+        <h3>Birthdays</h3>
+        <p>Make every candle wish sparkle bright.</p>
+      </article>
+      <article class="occ-card occ-5">
+        <div class="occ-bg" role="presentation"></div>
+        <h3>Diwali</h3>
+        <p>Bring joy and light to the Festival of Lights.</p>
+      </article>
+      <article class="occ-card occ-6">
+        <div class="occ-bg" role="presentation"></div>
+        <h3>Events</h3>
+        <p>Turn any occasion into an unforgettable celebration.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="container">
+    <div class="center reveal" style="max-width:720px;margin:0 auto">
+      <span class="section-tag">Buy Fireworks in Fayetteville</span>
+      <h2 class="section-title">A Few of Our <span class="red">Favorite</span> Products</h2>
+      <p class="lead" style="margin:0 auto">Hand-picked customer favorites — the showstoppers our regulars come back for every year.</p>
+    </div>
+    <div class="prod-grid">
+      <div class="prod-card">
+        <div class="prod-icon">💥</div>
+        <h4>Apocalypse Artillery</h4>
+        <p>Heavy-hitting reloadable mortars for an unforgettable finale.</p>
+        <button class="prod-btn" data-product="Apocalypse Artillery">Pre-Order</button>
+      </div>
+      <div class="prod-card">
+        <div class="prod-icon">🎆</div>
+        <h4>800 Shot Saturn Missile</h4>
+        <p>A relentless aerial barrage that lights up the sky.</p>
+        <button class="prod-btn" data-product="800 Shot Saturn Missile">Pre-Order</button>
+      </div>
+      <div class="prod-card">
+        <div class="prod-icon">🌟</div>
+        <h4>Nut Buster</h4>
+        <p>Customer favorite. Big sound, big effects, big smiles.</p>
+        <button class="prod-btn" data-product="Nut Buster">Pre-Order</button>
+      </div>
+      <div class="prod-card">
+        <div class="prod-icon">🏴‍☠️</div>
+        <h4>Pirate's Code</h4>
+        <p>An aerial adventure with bold colors and booming bursts.</p>
+        <button class="prod-btn" data-product="Pirate's Code">Pre-Order</button>
+      </div>
+    </div>
+
+    <div class="distributors reveal">
+      <h3>Top Quality Fireworks By</h3>
+      <div class="dist-row">
+        <img src="assets/images/brand-redrhino.png" alt="Red Rhino Fireworks">
+        <img src="assets/images/brand-spirit76.webp" alt="Spirit 76 Fireworks">
+      </div>
+      <p class="lead center" style="margin:2rem auto 0;max-width:640px;font-size:.95rem">
+        <strong style="color:#fff">Red Rhino</strong> — trusted brand offering high-performance fountains, rockets, sparklers, and cakes. <strong style="color:#fff">Spirit 76</strong> — premium fireworks known for innovation and quality.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FULL GALLERY -->
+<section class="gallery-section">
+  <div class="container">
+    <div class="center" style="max-width:720px;margin:0 auto">
+      <span class="section-tag">Our Store</span>
+      <h2 class="section-title">Step <span class="blue">Inside</span> G&amp;C</h2>
+      <p class="lead" style="margin:0 auto">Click any photo to view larger.</p>
+    </div>
+    <div class="gallery-grid" id="galleryGrid">
+      <figure><img src="assets/images/gallery-01.jpeg" alt="Inside the tent" loading="lazy"></figure>
+      <figure><img src="assets/images/gallery-10.jpeg" alt="Staff with assortment" loading="lazy"></figure>
+      <figure><img src="assets/images/gallery-02.jpeg" alt="Fireworks variety" loading="lazy"></figure>
+      <figure><img src="assets/images/gallery-03.webp" alt="Fireworks display" loading="lazy"></figure>
+      <figure><img src="assets/images/gallery-04.jpeg" alt="Customer favorite" loading="lazy"></figure>
+      <figure><img src="assets/images/gallery-05.jpeg" alt="Aerial fireworks" loading="lazy"></figure>
+      <figure><img src="assets/images/gallery-06.jpeg" alt="Selection" loading="lazy"></figure>
+      <figure><img src="assets/images/gallery-07.jpeg" alt="Selection" loading="lazy"></figure>
+      <figure><img src="assets/images/gallery-08.jpeg" alt="Display" loading="lazy"></figure>
+      <figure><img src="assets/images/gallery-09.jpeg" alt="Selection" loading="lazy"></figure>
+      <figure><img src="assets/images/gallery-11.webp" alt="Variety" loading="lazy"></figure>
+      <figure><img src="assets/images/gallery-12.jpeg" alt="Display" loading="lazy"></figure>
+      <figure><img src="assets/images/gallery-13.jpeg" alt="Display" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section class="locations" id="locations">
+  <div class="container">
+    <div class="center" style="max-width:720px;margin:0 auto">
+      <span class="section-tag">Fireworks Near Fayetteville</span>
+      <h2 class="section-title">Three <span class="red">Locations</span> to Serve You</h2>
+      <p class="lead" style="margin:0 auto">Open year-round by appointment, with full hours through the Fourth of July season.</p>
+    </div>
+    <div class="loc-grid">
+      <div class="loc-card">
+        <span class="loc-num">Main Location</span>
+        <iframe class="loc-map" title="G&amp;C Fireworks main location"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12526.624207800016!2d-94.22985013388518!3d36.093231585319636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c96b049e87dc75%3A0xa2c4d7dcb28c104e!2sG%26C%20Fireworks!5e1!3m2!1sen!2sus"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="loc-body">
+          <h4>2200 N Rupple Rd</h4>
+          <p>Fayetteville, AR 72704 — next to the gas station.</p>
+          <a class="btn btn-blue" href="https://maps.app.goo.gl/VdSg6Scg3weBRLuZ7" target="_blank" rel="noopener">Get Directions →</a>
+        </div>
+      </div>
+      <div class="loc-card">
+        <span class="loc-num">Location #2</span>
+        <iframe class="loc-map" title="G&amp;C Fireworks location 2"
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d803.2434047712538!2d-94.12319173039471!3d36.05511308249729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzbCsDAzJzE4LjQiTiA5NMKwMDcnMjEuMiJX!5e1!3m2!1sen!2sus"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="loc-body">
+          <h4>E Huntsville Rd &amp; S Stone Bridge Rd</h4>
+          <p>NE Corner — Fayetteville, AR 72701.</p>
+          <a class="btn btn-blue" href="https://maps.app.goo.gl/XWujL6vUuacvKmve6" target="_blank" rel="noopener">Get Directions →</a>
+        </div>
+      </div>
+      <div class="loc-card">
+        <span class="loc-num">Location #3</span>
+        <iframe class="loc-map" title="G&amp;C Fireworks location 3"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3132.2369749875543!2d-94.22994722430478!3d36.07865027246168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c96e223c501231%3A0x82ada973e1be05b!2s4621%20W%20Wedington%20Dr%2C%20Fayetteville%2C%20AR%2072704!5e1!3m2!1sen!2sus"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="loc-body">
+          <h4>4621 W Wedington Dr</h4>
+          <p>Corner of 46th Ave &amp; Wedington Dr. — Fayetteville, AR 72704.</p>
+          <a class="btn btn-blue" href="https://maps.app.goo.gl/cKjtMcdQhTgT7EXe7" target="_blank" rel="noopener">Get Directions →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOURS -->
+<section class="hours-section" id="hours">
+  <div class="container">
+    <div class="hours-grid">
+      <div>
+        <span class="section-tag">Open By Appointment</span>
+        <h2 class="section-title">Year-Round <span class="blue">Hours</span></h2>
+        <p class="lead">G&amp;C Fireworks is open <strong>year-round by appointment</strong>, with full hours during the major fireworks seasons. Need to schedule a visit? Just call or email us.</p>
+        <div class="appointment-note"><strong>Pre-orders for July 4th are open now</strong> — reserve your favorites for curbside pickup and skip the rush.</div>
+      </div>
+      <div>
+        <div class="hours-card">
+          <h4>July 4th Season Hours</h4>
+          <ul>
+            <li><span>June 28</span><strong>10 AM – 10 PM</strong></li>
+            <li><span>June 29 – July 3</span><strong>10 AM – 9 PM</strong></li>
+            <li><span>July 4</span><strong>10 AM – 10 PM</strong></li>
+          </ul>
+        </div>
+        <div class="hours-card" style="margin-top:1rem">
+          <h4>New Year's &amp; Off-Season</h4>
+          <ul>
+            <li><span>New Year's</span><strong>By Appointment</strong></li>
+            <li><span>Year-Round</span><strong>By Appointment</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <div class="center reveal" style="max-width:720px;margin:0 auto">
+      <span class="section-tag">What Our Customers Say</span>
+      <h2 class="section-title"><span class="red">Loved</span> by Northwest Arkansas</h2>
+    </div>
+    <div class="t-grid">
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"It was a nice place — helped with everything I needed. Great staff with a bunch of different variety of things."</p>
+        <div class="t-name">— Deon</div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"Amazing selection &amp; super friendly staff! Great deals — and wow, what an amazing giveaway for customers!"</p>
+        <div class="t-name">— Becky</div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"Super helpful! The fact I could scan the product and see exactly what it does is top-notch. Highly recommend!"</p>
+        <div class="t-name">— Misti</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRE-ORDER CTA -->
+<section class="preorder-cta">
+  <span class="section-tag" style="color:#ffe6e8">Coming Soon</span>
+  <h2>Online Pre-Orders &amp; Curbside Pickup</h2>
+  <p>Skip the line this Fourth of July. Reserve your favorites online, swing by your closest G&amp;C location, and we'll bring them right out to your car.</p>
+  <button type="button" class="btn btn-outline" id="openChatFromPreorder">Reserve By Phone or Email</button>
+  <div class="coming-soon-tag">Online Ordering Launching 2026</div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="center" style="max-width:720px;margin:0 auto">
+      <span class="section-tag">Let's Get in Touch</span>
+      <h2 class="section-title">Contact <span class="blue">G&amp;C Fireworks</span></h2>
+      <p class="lead" style="margin:0 auto">Questions, custom orders, large-event inquiries — we'd love to hear from you.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="ci-icon">📞</div>
+          <div>
+            <h4>CALL US</h4>
+            <a href="tel:+14793462668">(479) 346-2668</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">✉️</div>
+          <div>
+            <h4>EMAIL</h4>
+            <a href="mailto:gandcnwa@gmail.com">gandcnwa@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">📍</div>
+          <div>
+            <h4>MAIN STORE</h4>
+            <p>2200 N Rupple Rd<br>Fayetteville, AR 72704</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">🕐</div>
+          <div>
+            <h4>HOURS</h4>
+            <p>Year-round by appointment.<br>Full hours during July 4th &amp; New Year's seasons.</p>
+          </div>
+        </div>
+      </div>
+      <div class="chat-prompt-card">
+        <div class="chat-prompt-icon">💬</div>
+        <h3>Send Us a Message</h3>
+        <p>Have a question, a pre-order, or planning a big event? Tap the chat bubble in the bottom-right corner and we'll get back to you within 24 hours.</p>
+        <button class="btn btn-primary" id="openChatFromContact" type="button">Open Chat</button>
+        <p class="chat-prompt-note">Or email us directly at <a href="mailto:gandcnwa@gmail.com">gandcnwa@gmail.com</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/hero.png" alt="G&amp;C Fireworks">
+        <p>Family-owned, veteran-led. Fayetteville's go-to fireworks store for celebrations big and small. Operated by G &amp; C Johnson LLC.</p>
+        <div class="social">
+          <a href="https://www.facebook.com/p/GC-Fireworks-61560803761402/" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#locations">Locations</a></li>
+          <li><a href="#hours">Hours</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Stay in Touch</h5>
+        <ul>
+          <li><a href="tel:+14793462668">(479) 346-2668</a></li>
+          <li><a href="mailto:gandcnwa@gmail.com">gandcnwa@gmail.com</a></li>
+          <li>2200 N Rupple Rd</li>
+          <li>Fayetteville, AR 72704</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    <div class="container">
+      <p>
+        <strong>Safety &amp; legal notice:</strong>
+        Consumer fireworks are regulated by state and local law. Customers must be at least <strong>18 years of age</strong> to purchase fireworks in Arkansas. Fireworks should only be used by responsible adults, outdoors, in compliance with all applicable state and municipal laws and ordinances. <strong>Never give fireworks to small children.</strong> Always read warning labels and instructions before use, keep a water source nearby, and never relight a "dud." Fireworks may be illegal or restricted in your city or county — check local regulations before purchase or use. G&amp;C Fireworks is not responsible for misuse of products purchased at our locations.
+      </p>
+      <div class="legal-row">
+        <span>G&amp;C Fireworks © 2026 — G &amp; C Johnson LLC. All rights reserved.</span>
+        <span><a href="#contact">Terms &amp; Conditions</a> · <a href="#contact">Privacy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <button class="lightbox-close" id="lbClose" aria-label="Close">×</button>
+  <img id="lbImg" alt="">
+</div>
+
+<!-- FLOATING CHAT WIDGET -->
+<button class="chat-fab" id="chatFab" aria-label="Open chat" aria-expanded="false">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+  </svg>
+  <span class="chat-fab-badge" id="chatBadge">1</span>
+</button>
+
+<aside class="chat-panel" id="chatPanel" role="dialog" aria-modal="true" aria-labelledby="chatTitle">
+  <div class="chat-header">
+    <div class="chat-avatar"><img src="assets/images/logo.png" alt=""></div>
+    <div class="chat-header-text">
+      <strong id="chatTitle">G&amp;C Fireworks</strong>
+      <small>Usually replies within 24 hours</small>
+    </div>
+    <button class="chat-close" id="chatClose" aria-label="Close chat">×</button>
+  </div>
+
+  <div class="chat-body" id="chatBody">
+    <div class="chat-msg from-them">
+      👋 Hi! How can we help you celebrate? Pick a topic below or type your own message.
+    </div>
+    <div class="chat-quick" id="chatQuick">
+      <button data-topic="Pre-order / curbside pickup">Pre-order 🛒</button>
+      <button data-topic="Wedding fireworks">Wedding 💍</button>
+      <button data-topic="Gender reveal">Gender reveal 🎉</button>
+      <button data-topic="Large event / bulk order">Large event</button>
+      <button data-topic="Hero discount eligibility">Hero discount</button>
+      <button data-topic="General question">Other</button>
+    </div>
+  </div>
+
+  <form class="chat-form" id="chatForm" autocomplete="off" novalidate>
+    <!-- Web3Forms access key — replace PASTE_YOUR_WEB3FORMS_ACCESS_KEY_HERE with the key you get from web3forms.com -->
+    <input type="hidden" name="access_key" value="PASTE_YOUR_WEB3FORMS_ACCESS_KEY_HERE">
+    <input type="hidden" name="from_name" value="G&C Fireworks website">
+    <input type="hidden" name="subject" id="chatHiddenSubject" value="Website chat: General question">
+    <input type="hidden" name="redirect" value="false">
+    <!-- Honeypot for bots: real users never see/fill this -->
+    <input type="checkbox" name="botcheck" id="chatBotcheck" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;pointer-events:none">
+    <div class="row-2">
+      <input type="text" id="chatName" name="name" placeholder="Your name" required>
+      <input type="tel" id="chatPhone" name="phone" placeholder="Phone (optional)">
+    </div>
+    <input type="email" id="chatEmail" name="email" placeholder="Your email" required>
+    <select id="chatTopic" name="topic">
+      <option>General question</option>
+      <option>Pre-order / curbside pickup</option>
+      <option>Wedding fireworks</option>
+      <option>Gender reveal</option>
+      <option>Large event / bulk order</option>
+      <option>Hero discount eligibility</option>
+      <option>Other</option>
+    </select>
+    <textarea id="chatMessage" name="message" placeholder="Tell us what you're celebrating!" required></textarea>
+    <button type="submit" class="chat-send">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+      Send Message
+    </button>
+    <div class="chat-foot">Sent directly to <strong style="color:#bcc4d6">gandcnwa@gmail.com</strong> — no email app required</div>
+  </form>
+  <div class="chat-thanks" id="chatThanks" role="status" aria-live="polite">
+    <div class="chat-spinner" aria-hidden="true"></div>
+    <div class="chat-thanks-icon" id="chatThanksIcon">✓</div>
+    <h4 id="chatThanksTitle">Message Sent!</h4>
+    <p id="chatThanksBody">Thanks, <span id="chatThanksName">friend</span> — your message just landed in our inbox. We'll get back to you within 24 hours.</p>
+    <p class="chat-thanks-sub">This chat will close in <span id="chatCloseCountdown">5</span>s</p>
+    <button type="button" class="close-btn" id="chatThanksClose">Close Now</button>
+    <button type="button" class="retry-btn" id="chatRetry">Try Again</button>
+  </div>
+</aside>
+
+<script>
+  // ===== AGE GATE =====
+  const ageGate = document.getElementById('ageGate');
+  const ageYes = document.getElementById('ageYes');
+  if (sessionStorage.getItem('gc_age_ok') === '1') ageGate.classList.add('hidden');
+  ageYes.addEventListener('click', () => {
+    sessionStorage.setItem('gc_age_ok', '1');
+    ageGate.classList.add('hidden');
+  });
+
+  // ===== MOBILE MENU =====
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    menuBtn.classList.toggle('open', open);
+    menuBtn.setAttribute('aria-expanded', open);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    menuBtn.classList.remove('open');
+  }));
+
+  // ===== COUNTDOWN TO NEXT JULY 4 =====
+  function nextJuly4() {
+    const now = new Date();
+    let y = now.getFullYear();
+    let target = new Date(y, 6, 4, 21, 0, 0);
+    if (now > target) target = new Date(y + 1, 6, 4, 21, 0, 0);
+    return target;
+  }
+  const target = nextJuly4();
+  function tick() {
+    const now = new Date();
+    let diff = Math.max(0, target - now);
+    const d = Math.floor(diff / 86400000); diff -= d * 86400000;
+    const h = Math.floor(diff / 3600000); diff -= h * 3600000;
+    const m = Math.floor(diff / 60000); diff -= m * 60000;
+    const s = Math.floor(diff / 1000);
+    document.getElementById('cd-d').textContent = String(d).padStart(2, '0');
+    document.getElementById('cd-h').textContent = String(h).padStart(2, '0');
+    document.getElementById('cd-m').textContent = String(m).padStart(2, '0');
+    document.getElementById('cd-s').textContent = String(s).padStart(2, '0');
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  // ===== STARFIELD (subtle twinkle, background) =====
+  const stars = document.getElementById('stars');
+  for (let i = 0; i < 40; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'star-dot';
+    dot.style.left = Math.random() * 100 + '%';
+    dot.style.top = Math.random() * 100 + '%';
+    dot.style.animationDelay = (Math.random() * 3) + 's';
+    dot.style.opacity = (Math.random() * 0.6 + 0.2);
+    stars.appendChild(dot);
+  }
+
+  // ===== RISING EMBERS (warm sparks drifting up the hero) =====
+  const embersContainer = document.getElementById('embers');
+  const emberColors = ['', 'red', 'blue', 'white']; // '' = default gold
+  if (embersContainer) {
+    for (let i = 0; i < 36; i++) {
+      const e = document.createElement('div');
+      e.className = 'ember ' + emberColors[Math.floor(Math.random() * emberColors.length)];
+      e.style.left = (Math.random() * 100) + '%';
+      e.style.animationDuration = (14 + Math.random() * 18) + 's';
+      e.style.animationDelay = (-Math.random() * 30) + 's';
+      const size = 2 + Math.random() * 3.5;
+      e.style.width = size + 'px';
+      e.style.height = size + 'px';
+      e.style.opacity = (0.35 + Math.random() * 0.5);
+      embersContainer.appendChild(e);
+    }
+  }
+
+  // ===== FIREWORK BURST CANVAS (periodic, capped) =====
+  (function fireworksCanvas() {
+    const canvas = document.getElementById('fireworks');
+    if (!canvas) return;
+    // Respect prefers-reduced-motion
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const ctx = canvas.getContext('2d');
+    let dpr = Math.min(window.devicePixelRatio || 1, 2);
+    function resize() {
+      const rect = canvas.getBoundingClientRect();
+      canvas.width  = Math.max(1, Math.floor(rect.width * dpr));
+      canvas.height = Math.max(1, Math.floor(rect.height * dpr));
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    const colors = [
+      ['#ff5a4a', '#ffb199'],   // red
+      ['#3FB8DD', '#a8ecff'],   // blue
+      ['#FFC857', '#fff1c1'],   // gold
+      ['#ffffff', '#e8eefb']    // white
+    ];
+
+    const particles = [];
+    const maxBursts = 2;   // concurrent bursts in flight
+    let activeBursts = 0;
+
+    function spawnBurst() {
+      if (activeBursts >= maxBursts) return;
+      activeBursts++;
+      const rect = canvas.getBoundingClientRect();
+      const x = rect.width * (0.18 + Math.random() * 0.64);
+      const y = rect.height * (0.18 + Math.random() * 0.45);
+      const pair = colors[Math.floor(Math.random() * colors.length)];
+      const count = 42 + Math.floor(Math.random() * 18);
+      for (let i = 0; i < count; i++) {
+        const angle = (Math.PI * 2) * (i / count) + (Math.random() - 0.5) * 0.15;
+        const speed = 1.8 + Math.random() * 2.4;
+        particles.push({
+          x, y,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed,
+          life: 1,
+          decay: 0.012 + Math.random() * 0.012,
+          size: 1.8 + Math.random() * 1.4,
+          color: Math.random() < 0.7 ? pair[0] : pair[1],
+          burstId: activeBursts
+        });
+      }
+      // mark this burst as no-longer-active after a fade window
+      setTimeout(() => { activeBursts = Math.max(0, activeBursts - 1); }, 1500);
+    }
+
+    let running = true;
+    let lastBurst = 0;
+    function loop(now) {
+      if (!running) return;
+      ctx.globalCompositeOperation = 'source-over';
+      // Soft trail effect — slight clear each frame
+      ctx.fillStyle = 'rgba(5, 9, 18, 0.18)';
+      ctx.fillRect(0, 0, canvas.width / dpr, canvas.height / dpr);
+      ctx.globalCompositeOperation = 'lighter';
+
+      for (let i = particles.length - 1; i >= 0; i--) {
+        const p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.035;          // gravity
+        p.vx *= 0.992; p.vy *= 0.992; // mild drag
+        p.life -= p.decay;
+        if (p.life <= 0) { particles.splice(i, 1); continue; }
+        ctx.beginPath();
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = Math.max(0, p.life);
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+
+      // Spawn bursts every 3.5-6.5s
+      if (now - lastBurst > (3500 + Math.random() * 3000)) {
+        spawnBurst();
+        lastBurst = now;
+      }
+      requestAnimationFrame(loop);
+    }
+
+    // Pause when hero is off-screen (perf)
+    const hero = canvas.closest('.hero');
+    if ('IntersectionObserver' in window && hero) {
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(en => {
+          if (en.isIntersecting) {
+            if (!running) { running = true; lastBurst = performance.now(); requestAnimationFrame(loop); }
+          } else {
+            running = false;
+            particles.length = 0;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+          }
+        });
+      }, { threshold: 0.05 });
+      obs.observe(hero);
+    }
+
+    // Pause when tab hidden
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) { running = false; }
+      else if (!running) {
+        const visible = hero ? hero.getBoundingClientRect().bottom > 0 : true;
+        if (visible) { running = true; lastBurst = performance.now(); requestAnimationFrame(loop); }
+      }
+    });
+
+    // Kickoff: first burst after 700ms so the hero settles before motion
+    setTimeout(() => { lastBurst = performance.now() - 1500; spawnBurst(); requestAnimationFrame(loop); }, 700);
+  })();
+
+  // ===== REVEAL ON SCROLL =====
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // ===== LIGHTBOX =====
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  document.querySelectorAll('.gallery-grid figure img').forEach(img => {
+    img.addEventListener('click', () => {
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lightbox.classList.add('open');
+    });
+  });
+  document.getElementById('lbClose').addEventListener('click', () => lightbox.classList.remove('open'));
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.remove('open'); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') lightbox.classList.remove('open'); });
+
+  // ===== FLOATING CHAT WIDGET =====
+  const chatFab = document.getElementById('chatFab');
+  const chatPanel = document.getElementById('chatPanel');
+  const chatClose = document.getElementById('chatClose');
+  const chatBadge = document.getElementById('chatBadge');
+  const chatBody = document.getElementById('chatBody');
+  const chatTopic = document.getElementById('chatTopic');
+  const chatMessage = document.getElementById('chatMessage');
+
+  function openChat(prefill) {
+    // If reopening after a sent state, wipe everything first
+    if (chatPanel.classList.contains('sent')) resetChat();
+    chatPanel.classList.add('open');
+    chatFab.classList.add('hidden');
+    chatFab.setAttribute('aria-expanded', 'true');
+    if (chatBadge) chatBadge.style.display = 'none';
+    if (prefill && prefill.topic) {
+      chatTopic.value = prefill.topic;
+      const bubble = document.createElement('div');
+      bubble.className = 'chat-msg from-you';
+      bubble.textContent = prefill.lead || ("I'd like to ask about: " + prefill.topic);
+      chatBody.appendChild(bubble);
+      if (prefill.lead) chatMessage.value = prefill.lead;
+      else if (prefill.product) chatMessage.value = "I'd like to pre-order: " + prefill.product;
+      requestAnimationFrame(() => { chatBody.scrollTop = chatBody.scrollHeight; });
+    }
+    setTimeout(() => document.getElementById('chatName').focus(), 200);
+  }
+  function closeChat() {
+    chatPanel.classList.remove('open');
+    chatFab.classList.remove('hidden');
+    chatFab.setAttribute('aria-expanded', 'false');
+    // After the slide-out animation completes, reset the chat so it opens fresh next time
+    setTimeout(() => { if (!chatPanel.classList.contains('open')) resetChat(); }, 350);
+  }
+  chatFab.addEventListener('click', () => openChat());
+  chatClose.addEventListener('click', closeChat);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && chatPanel.classList.contains('open')) closeChat();
+  });
+
+  document.querySelectorAll('#chatQuick button').forEach(b => {
+    b.addEventListener('click', () => {
+      const topic = b.dataset.topic;
+      chatTopic.value = topic;
+      const bubble = document.createElement('div');
+      bubble.className = 'chat-msg from-you';
+      bubble.textContent = topic;
+      chatBody.appendChild(bubble);
+      const reply = document.createElement('div');
+      reply.className = 'chat-msg from-them';
+      reply.textContent = "Got it! Fill in your name and email below and tell us a bit more — we'll be in touch soon.";
+      chatBody.appendChild(reply);
+      chatBody.scrollTop = chatBody.scrollHeight;
+      document.getElementById('chatName').focus();
+    });
+  });
+
+  // ===== PRE-ORDER BUTTONS — open chat with topic pre-filled =====
+  document.querySelectorAll('.prod-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const product = btn.dataset.product || 'a product';
+      openChat({
+        topic: 'Pre-order / curbside pickup',
+        product: product,
+        lead: "I'd like to pre-order: " + product
+      });
+    });
+  });
+
+  const fromContact = document.getElementById('openChatFromContact');
+  if (fromContact) fromContact.addEventListener('click', () => openChat());
+  const fromPreorder = document.getElementById('openChatFromPreorder');
+  if (fromPreorder) fromPreorder.addEventListener('click', () => openChat({ topic: 'Pre-order / curbside pickup' }));
+
+  // ===== CHAT FORM SUBMIT — POST directly to Web3Forms =====
+  let chatSubmitted = false;
+  let chatCloseTimer = null;
+  const chatThanksEl = document.getElementById('chatThanks');
+  const chatThanksTitle = document.getElementById('chatThanksTitle');
+  const chatThanksBody = document.getElementById('chatThanksBody');
+  const chatRetryBtn = document.getElementById('chatRetry');
+
+  function resetChat(){
+    document.getElementById('chatForm').reset();
+    const initialChildren = 2; // greeting + quick-reply chip row
+    while (chatBody.children.length > initialChildren){
+      chatBody.removeChild(chatBody.lastChild);
+    }
+    chatPanel.classList.remove('sent');
+    chatThanksEl.classList.remove('is-sending','is-error');
+    chatThanksTitle.textContent = 'Message Sent!';
+    chatThanksBody.innerHTML = "Thanks, <span id=\"chatThanksName\">friend</span> — your message just landed in our inbox. We'll get back to you within 24 hours.";
+    chatSubmitted = false;
+    if (chatCloseTimer){ clearInterval(chatCloseTimer); chatCloseTimer = null; }
+    if (chatBadge){ chatBadge.style.display = ''; }
+  }
+
+  function startAutoClose(seconds){
+    let secs = seconds;
+    const el = document.getElementById('chatCloseCountdown');
+    if (el) el.textContent = secs;
+    chatCloseTimer = setInterval(() => {
+      secs -= 1;
+      if (el) el.textContent = secs;
+      if (secs <= 0){ clearInterval(chatCloseTimer); chatCloseTimer = null; closeChat(); }
+    }, 1000);
+  }
+
+  document.getElementById('chatForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (chatSubmitted) return;
+    chatSubmitted = true;
+
+    const form = e.target;
+    const name = document.getElementById('chatName').value.trim();
+    const topic = chatTopic.value;
+    const first = (name.split(' ')[0] || 'friend');
+
+    // Update hidden subject so the email subject line is descriptive
+    document.getElementById('chatHiddenSubject').value = 'Website chat: ' + topic;
+
+    // Honeypot check
+    if (document.getElementById('chatBotcheck').checked){
+      // Silently drop bot submissions
+      chatPanel.classList.add('sent');
+      chatThanksEl.classList.remove('is-sending','is-error');
+      return;
+    }
+
+    // Switch to "sending" state — show spinner
+    chatPanel.classList.add('sent');
+    chatThanksEl.classList.add('is-sending');
+    chatThanksTitle.textContent = 'Sending…';
+    chatThanksBody.textContent = 'Hang tight, ' + first + ' — delivering your message now.';
+
+    // Disable submit button just in case
+    const submitBtn = form.querySelector('.chat-send');
+    if (submitBtn) submitBtn.disabled = true;
+
+    try {
+      const fd = new FormData(form);
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: fd,
+        headers: { 'Accept': 'application/json' }
+      });
+      const data = await res.json().catch(() => ({success: false, message: 'Bad response'}));
+
+      if (res.ok && data && data.success){
+        // SUCCESS
+        chatThanksEl.classList.remove('is-sending','is-error');
+        chatThanksTitle.textContent = 'Message Sent!';
+        chatThanksBody.innerHTML = 'Thanks, <strong style="color:#fff">' + first + '</strong> — your message just landed in our inbox. We\'ll get back to you within 24 hours.';
+        form.reset();
+        startAutoClose(5);
+      } else {
+        throw new Error(data && data.message ? data.message : ('HTTP ' + res.status));
+      }
+    } catch (err) {
+      // ERROR — allow retry
+      chatThanksEl.classList.remove('is-sending');
+      chatThanksEl.classList.add('is-error');
+      document.getElementById('chatThanksIcon').textContent = '!';
+      chatThanksTitle.textContent = "Couldn't Send";
+      chatThanksBody.innerHTML = 'Something went wrong on our end. Please try again, or email us directly at <a href="mailto:gandcnwa@gmail.com" style="color:#7ee3ff;text-decoration:underline">gandcnwa@gmail.com</a>.';
+      chatSubmitted = false; // allow retry
+      if (submitBtn) submitBtn.disabled = false;
+    }
+  });
+
+  // Manual close + retry handlers
+  const thanksCloseBtn = document.getElementById('chatThanksClose');
+  if (thanksCloseBtn) thanksCloseBtn.addEventListener('click', closeChat);
+  if (chatRetryBtn) chatRetryBtn.addEventListener('click', () => {
+    chatPanel.classList.remove('sent');
+    chatThanksEl.classList.remove('is-error','is-sending');
+    chatThanksTitle.textContent = 'Message Sent!';
+    document.getElementById('chatThanksIcon').textContent = '✓';
+    chatSubmitted = false;
+  });
+</script>
+</body>
+</html>
