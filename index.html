@@ -150,17 +150,16 @@
   .section-title .blue{color:var(--blue)}
   .lead{color:#bcc4d6;max-width:720px;font-size:1.05rem}
 
-  /* ====== ABOUT ====== */
+  /* ====== ABOUT + GALLERY (combined) ====== */
   .about{background:var(--ink)}
-  .about-grid{display:grid;grid-template-columns:1fr;gap:2.5rem;align-items:center}
-  @media (min-width:900px){.about-grid{grid-template-columns:1.05fr 1fr}}
-  .about-copy p{margin-bottom:1rem;color:#cdd4e3}
+  .about-intro{
+    max-width:780px;margin:0 auto 3rem;text-align:center;
+  }
+  .about-intro .section-title{margin-bottom:1.6rem}
+  .about-copy p{margin-bottom:1rem;color:#cdd4e3;text-align:left}
   .about-copy strong{color:#fff}
-  .about-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.4rem}
+  .about-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.6rem;justify-content:center}
   .tag{background:rgba(63,184,221,0.10);color:var(--blue);border:1px solid rgba(63,184,221,0.35);padding:.4rem .8rem;border-radius:99px;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
-  .gallery-collage{display:grid;grid-template-columns:repeat(3,1fr);gap:.45rem;border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
-  .gallery-collage img{aspect-ratio:1/1;object-fit:cover;width:100%;height:100%;transition:transform .5s ease}
-  .gallery-collage img:hover{transform:scale(1.06)}
 
   /* ====== FULL GALLERY ====== */
   .gallery-section{background:linear-gradient(180deg,var(--ink) 0%,#080d18 100%)}
@@ -208,6 +207,7 @@
   .occ-card > *:not(.occ-bg){position:relative;z-index:1}
   .occ-card h3{color:#fff;margin-bottom:.2rem}
   .occ-card p{color:#dfe5f1;font-size:.92rem}
+  
   .occ-1 .occ-bg{background-image:url("assets/images/gallery-08.jpeg")}
   .occ-2 .occ-bg{background-image:url("assets/images/gallery-04.jpeg")}
   .occ-3 .occ-bg{background-image:url("assets/images/gallery-09.jpeg")}
@@ -772,7 +772,6 @@
   </div>
 </div>
 
-
 <!-- BRAND MARQUEE -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track" id="marqueeTrack">
@@ -804,31 +803,20 @@
 <!-- ABOUT -->
 <section class="about" id="about">
   <div class="container">
-    <div class="about-grid">
-      <div class="about-copy reveal">
-        <span class="section-tag">About G&amp;C Fireworks</span>
-        <h2 class="section-title">A <span class="red">Family-Owned,</span> <span class="blue">Veteran-Led</span> Tradition</h2>
-        <p>At <strong>G&amp;C Fireworks</strong>, family, community, and celebration are at the heart of everything we do. Though we're from Arkansas and Tennessee and have lived all over the state, Northwest Arkansas is home — with our family rooted throughout the valley and NWA.</p>
-        <p>Outside of fireworks, we serve our community through healthcare at Mercy, WRMC, and Snell Prosthetics &amp; Orthotics. But we wanted to create something special together that reflects our love for this community and the values of our country — and that vision became G&amp;C Fireworks.</p>
-        <p><strong>Greg is a veteran,</strong> and with military service running deep in both of our families, patriotism is in our blood. To us, fireworks are more than entertainment — they're a way to bring people together, honor traditions, and celebrate freedom.</p>
-        <p>We're proud to offer one of the best selections of fireworks in Fayetteville. Whether it's the Fourth of July, a family gathering, or a moment worth lighting up — we're here to help make it unforgettable.</p>
-        <div class="about-tags">
-          <span class="tag">Veteran Founded</span>
-          <span class="tag">Local to NWA</span>
-          <span class="tag">Community First</span>
-          <span class="tag">Top Brands</span>
-        </div>
+    <div class="about-intro reveal">
+      <span class="section-tag">About G&amp;C Fireworks</span>
+      <h2 class="section-title">A <span class="red">Family-Owned,</span> <span class="blue">Veteran-Led</span> Tradition</h2>
+      <div class="about-copy">
+        <p>At <strong>G&amp;C Fireworks</strong>, family, community, and celebration are at the heart of everything we do. Though we're from Arkansas and Tennessee and have lived all over the state, Northwest Arkansas is home &mdash; with our family rooted throughout the valley and NWA.</p>
+        <p>Outside of fireworks, we serve our community through healthcare at Mercy, WRMC, and Snell Prosthetics &amp; Orthotics. But we wanted to create something special together that reflects our love for this community and the values of our country &mdash; and that vision became G&amp;C Fireworks.</p>
+        <p><strong>Greg is a veteran,</strong> and with military service running deep in both of our families, patriotism is in our blood. To us, fireworks are more than entertainment &mdash; they're a way to bring people together, honor traditions, and celebrate freedom.</p>
+        <p>We're proud to offer one of the best selections of fireworks in Fayetteville. Whether it's the Fourth of July, a family gathering, or a moment worth lighting up &mdash; we're here to help make it unforgettable.</p>
       </div>
-      <div class="gallery-collage reveal">
-        <img src="assets/images/gallery-01.jpeg" alt="Inside G&amp;C Fireworks">
-        <img src="assets/images/gallery-10.jpeg" alt="G&amp;C staff with fireworks assortment">
-        <img src="assets/images/gallery-03.webp" alt="G&amp;C Fireworks display">
-        <img src="assets/images/gallery-12.jpeg" alt="Fireworks selection">
-        <img src="assets/images/gallery-11.webp" alt="Fireworks variety">
-        <img src="assets/images/gallery-02.jpeg" alt="Fireworks at G&amp;C">
-        <img src="assets/images/gallery-04.jpeg" alt="Customer favorite">
-        <img src="assets/images/gallery-05.jpeg" alt="Aerial fireworks">
-        <img src="assets/images/gallery-13.jpeg" alt="Selection of fireworks">
+      <div class="about-tags">
+        <span class="tag">Veteran Founded</span>
+        <span class="tag">Local to NWA</span>
+        <span class="tag">Community First</span>
+        <span class="tag">Top Brands</span>
       </div>
     </div>
   </div>
@@ -896,6 +884,32 @@
   </div>
 </section>
 
+<!-- FULL GALLERY -->
+<section class="gallery-section">
+  <div class="container">
+    <div class="center" style="max-width:720px;margin:0 auto">
+      <span class="section-tag">Our Store</span>
+      <h2 class="section-title">Step <span class="blue">Inside</span> G&amp;C</h2>
+      <p class="lead" style="margin:0 auto">Click any photo to view larger.</p>
+    </div>
+    <div class="gallery-grid" id="galleryGrid">
+      <figure><img src="assets/images/gallery-01.jpeg" alt="Inside the tent" loading="lazy"></figure>
+      <figure><img src="assets/images/gallery-10.jpeg" alt="Staff with assortment" loading="lazy"></figure>
+      <figure><img src="assets/images/gallery-02.jpeg" alt="Fireworks variety" loading="lazy"></figure>
+      <figure><img src="assets/images/gallery-03.webp" alt="Fireworks display" loading="lazy"></figure>
+      <figure><img src="assets/images/gallery-04.jpeg" alt="Customer favorite" loading="lazy"></figure>
+      <figure><img src="assets/images/gallery-05.jpeg" alt="Aerial fireworks" loading="lazy"></figure>
+      <figure><img src="assets/images/gallery-06.jpeg" alt="Selection" loading="lazy"></figure>
+      <figure><img src="assets/images/gallery-07.jpeg" alt="Selection" loading="lazy"></figure>
+      <figure><img src="assets/images/gallery-08.jpeg" alt="Display" loading="lazy"></figure>
+      <figure><img src="assets/images/gallery-09.jpeg" alt="Selection" loading="lazy"></figure>
+      <figure><img src="assets/images/gallery-11.webp" alt="Variety" loading="lazy"></figure>
+      <figure><img src="assets/images/gallery-12.jpeg" alt="Display" loading="lazy"></figure>
+      <figure><img src="assets/images/gallery-13.jpeg" alt="Display" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
 <!-- PRODUCTS -->
 <section class="products" id="products">
   <div class="container">
@@ -940,32 +954,6 @@
       <p class="lead center" style="margin:2rem auto 0;max-width:640px;font-size:.95rem">
         <strong style="color:#fff">Red Rhino</strong> — trusted brand offering high-performance fountains, rockets, sparklers, and cakes. <strong style="color:#fff">Spirit 76</strong> — premium fireworks known for innovation and quality.
       </p>
-    </div>
-  </div>
-</section>
-
-<!-- FULL GALLERY -->
-<section class="gallery-section">
-  <div class="container">
-    <div class="center" style="max-width:720px;margin:0 auto">
-      <span class="section-tag">Our Store</span>
-      <h2 class="section-title">Step <span class="blue">Inside</span> G&amp;C</h2>
-      <p class="lead" style="margin:0 auto">Click any photo to view larger.</p>
-    </div>
-    <div class="gallery-grid" id="galleryGrid">
-      <figure><img src="assets/images/gallery-01.jpeg" alt="Inside the tent" loading="lazy"></figure>
-      <figure><img src="assets/images/gallery-10.jpeg" alt="Staff with assortment" loading="lazy"></figure>
-      <figure><img src="assets/images/gallery-02.jpeg" alt="Fireworks variety" loading="lazy"></figure>
-      <figure><img src="assets/images/gallery-03.webp" alt="Fireworks display" loading="lazy"></figure>
-      <figure><img src="assets/images/gallery-04.jpeg" alt="Customer favorite" loading="lazy"></figure>
-      <figure><img src="assets/images/gallery-05.jpeg" alt="Aerial fireworks" loading="lazy"></figure>
-      <figure><img src="assets/images/gallery-06.jpeg" alt="Selection" loading="lazy"></figure>
-      <figure><img src="assets/images/gallery-07.jpeg" alt="Selection" loading="lazy"></figure>
-      <figure><img src="assets/images/gallery-08.jpeg" alt="Display" loading="lazy"></figure>
-      <figure><img src="assets/images/gallery-09.jpeg" alt="Selection" loading="lazy"></figure>
-      <figure><img src="assets/images/gallery-11.webp" alt="Variety" loading="lazy"></figure>
-      <figure><img src="assets/images/gallery-12.jpeg" alt="Display" loading="lazy"></figure>
-      <figure><img src="assets/images/gallery-13.jpeg" alt="Display" loading="lazy"></figure>
     </div>
   </div>
 </section>
@@ -1222,8 +1210,8 @@
   </div>
 
   <form class="chat-form" id="chatForm" autocomplete="off" novalidate>
-    <!-- Web3Forms access key — replace PASTE_YOUR_WEB3FORMS_ACCESS_KEY_HERE with the key you get from web3forms.com -->
-    <input type="hidden" name="access_key" value="PASTE_YOUR_WEB3FORMS_ACCESS_KEY_HERE">
+    <!-- Web3Forms access key (from web3forms.com) — handles form delivery to gandcnwa@gmail.com -->
+    <input type="hidden" name="access_key" value="07b980ec-3d4b-4e6f-9a78-2d0feb37e8b0">
     <input type="hidden" name="from_name" value="G&C Fireworks website">
     <input type="hidden" name="subject" id="chatHiddenSubject" value="Website chat: General question">
     <input type="hidden" name="redirect" value="false">
