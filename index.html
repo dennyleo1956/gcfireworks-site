@@ -167,7 +167,8 @@
   .gallery-grid figure{position:relative;overflow:hidden;border-radius:8px;aspect-ratio:1/1;cursor:zoom-in}
   .gallery-grid img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
   .gallery-grid figure:hover img{transform:scale(1.08)}
-  .gallery-grid figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,0.6));opacity:0;transition:opacity .3s}
+  .gallery-grid figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,0.6));opacity:0;transition:opacity .3s;pointer-events:none}
+  .gallery-grid figure img{pointer-events:none}
   .gallery-grid figure:hover::after{opacity:1}
 
   /* ====== LIGHTBOX ====== */
@@ -808,7 +809,7 @@
       <h2 class="section-title">A <span class="red">Family-Owned,</span> <span class="blue">Veteran-Led</span> Tradition</h2>
       <div class="about-copy">
         <p>At <strong>G&amp;C Fireworks</strong>, family, community, and celebration are at the heart of everything we do. Though we're from Arkansas and Tennessee and have lived all over the state, Northwest Arkansas is home &mdash; with our family rooted throughout the valley and NWA.</p>
-        <p>Outside of fireworks, we serve our community through healthcare at Mercy, WRMC, and Snell Prosthetics &amp; Orthotics. But we wanted to create something special together that reflects our love for this community and the values of our country &mdash; and that vision became G&amp;C Fireworks.</p>
+        <p>Outside of fireworks, we serve our community through healthcare at Johnson Prosthetics &amp; Orthotics. But we wanted to create something special together that reflects our love for this community and the values of our country &mdash; and that vision became G&amp;C Fireworks.</p>
         <p><strong>Greg is a veteran,</strong> and with military service running deep in both of our families, patriotism is in our blood. To us, fireworks are more than entertainment &mdash; they're a way to bring people together, honor traditions, and celebrate freedom.</p>
         <p>We're proud to offer one of the best selections of fireworks in Fayetteville. Whether it's the Fourth of July, a family gathering, or a moment worth lighting up &mdash; we're here to help make it unforgettable.</p>
       </div>
@@ -905,7 +906,6 @@
       <figure><img src="assets/images/gallery-09.jpeg" alt="Selection" loading="lazy"></figure>
       <figure><img src="assets/images/gallery-11.webp" alt="Variety" loading="lazy"></figure>
       <figure><img src="assets/images/gallery-12.jpeg" alt="Display" loading="lazy"></figure>
-      <figure><img src="assets/images/gallery-13.jpeg" alt="Display" loading="lazy"></figure>
     </div>
   </div>
 </section>
@@ -1454,8 +1454,11 @@
   // ===== LIGHTBOX =====
   const lightbox = document.getElementById('lightbox');
   const lbImg = document.getElementById('lbImg');
-  document.querySelectorAll('.gallery-grid figure img').forEach(img => {
-    img.addEventListener('click', () => {
+  // Attach to the FIGURE (not the img) so the gradient overlay can't swallow the click
+  document.querySelectorAll('.gallery-grid figure').forEach(fig => {
+    fig.addEventListener('click', () => {
+      const img = fig.querySelector('img');
+      if (!img) return;
       lbImg.src = img.src;
       lbImg.alt = img.alt;
       lightbox.classList.add('open');
