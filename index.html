@@ -688,6 +688,40 @@
   .chat-thanks.is-sending p{color:var(--gray)}
   .chat-thanks.is-sending .close-btn,
   .chat-thanks.is-sending .chat-thanks-sub{display:none}
+
+  /* ====== VIDEO SECTION ====== */
+  .videos{background:linear-gradient(180deg,var(--ink),#070b14);position:relative}
+  .videos .center{max-width:720px;margin:0 auto}
+  .videos-grid{
+    display:grid;grid-template-columns:1fr;gap:1.2rem;
+    margin-top:2.4rem;
+  }
+  @media (min-width: 800px){
+    .videos-grid{grid-template-columns:1fr 1fr;gap:1.5rem}
+  }
+  .video-card{
+    border-radius:14px;overflow:hidden;
+    border:1px solid var(--line);
+    background:rgba(255,255,255,0.04);
+    transition:transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+    box-shadow:0 14px 36px rgba(0,0,0,0.4);
+  }
+  .video-card:hover{transform:translateY(-5px);border-color:var(--red);box-shadow:0 22px 50px rgba(0,0,0,0.55)}
+  .video-frame{
+    position:relative;width:100%;aspect-ratio:16/9;background:#000;
+    overflow:hidden;
+  }
+  .video-frame iframe{
+    position:absolute;inset:0;width:100%;height:100%;
+    border:0;display:block;
+  }
+  .videos-cta{
+    margin-top:3rem;text-align:center;
+    display:flex;flex-direction:column;align-items:center;gap:.8rem;
+  }
+  .videos-cta p{color:#cdd4e3;font-size:1rem;margin:0}
+  .videos-cta .btn{display:inline-flex;align-items:center;gap:.5rem}
+  .videos-cta svg{width:16px;height:16px;fill:currentColor}
 </style>
 </head>
 <body>
@@ -896,7 +930,7 @@
     <div class="gallery-grid" id="galleryGrid">
       <figure><img src="assets/images/gallery-01.jpeg" alt="Inside the tent" loading="lazy"></figure>
       <figure><img src="assets/images/gallery-10.jpeg" alt="Staff with assortment" loading="lazy"></figure>
-      <figure><img src="assets/images/gallery-02.jpeg" alt="Fireworks variety" loading="lazy"></figure>
+      <figure><img src="assets/images/gallery-13.jpeg" alt="Our tent at G&amp;C Fireworks" loading="lazy"></figure>
       <figure><img src="assets/images/gallery-03.webp" alt="Fireworks display" loading="lazy"></figure>
       <figure><img src="assets/images/gallery-04.jpeg" alt="Customer favorite" loading="lazy"></figure>
       <figure><img src="assets/images/gallery-05.jpeg" alt="Aerial fireworks" loading="lazy"></figure>
@@ -906,6 +940,75 @@
       <figure><img src="assets/images/gallery-09.jpeg" alt="Selection" loading="lazy"></figure>
       <figure><img src="assets/images/gallery-11.webp" alt="Variety" loading="lazy"></figure>
       <figure><img src="assets/images/gallery-12.jpeg" alt="Display" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEOS -->
+<section class="videos">
+  <div class="container">
+    <div class="center reveal">
+      <span class="section-tag">See Us In Action</span>
+      <h2 class="section-title">Light Up The <span class="red">Night</span></h2>
+      <p class="lead" style="margin:0 auto">Highlights from past celebrations across Northwest Arkansas — weddings, ballparks, and Fourth of July shows.</p>
+    </div>
+
+    <div class="videos-grid">
+      <!-- top-left: Vimeo 333551742 -->
+      <div class="video-card">
+        <div class="video-frame">
+          <iframe src="https://player.vimeo.com/video/333551742"
+                  title="G&amp;C Fireworks display 1"
+                  frameborder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowfullscreen
+                  loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <!-- top-right: YouTube HotA58_07zA (with t=2s start) -->
+      <div class="video-card">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/HotA58_07zA?start=2"
+                  title="G&amp;C Fireworks display 2"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <!-- bottom-left: Vimeo 22080777 -->
+      <div class="video-card">
+        <div class="video-frame">
+          <iframe src="https://player.vimeo.com/video/22080777"
+                  title="G&amp;C Fireworks display 3"
+                  frameborder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowfullscreen
+                  loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <!-- bottom-right: YouTube 27pC-PhqV84 -->
+      <div class="video-card">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/27pC-PhqV84"
+                  title="G&amp;C Fireworks display 4"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="videos-cta reveal">
+      <p>Want more? Follow us on Facebook for the latest videos and updates.</p>
+      <a href="https://www.facebook.com/p/GC-Fireworks-61560803761402/" class="btn btn-blue" target="_blank" rel="noopener" aria-label="Follow G&amp;C Fireworks on Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+        Follow on Facebook
+      </a>
     </div>
   </div>
 </section>
@@ -1646,9 +1749,4 @@
     chatPanel.classList.remove('sent');
     chatThanksEl.classList.remove('is-error','is-sending');
     chatThanksTitle.textContent = 'Message Sent!';
-    document.getElementById('chatThanksIcon').textContent = '✓';
-    chatSubmitted = false;
-  });
-</script>
-</body>
-</html>
+   
