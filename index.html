@@ -393,19 +393,19 @@
 
   /* ====== FLOATING CHAT WIDGET ====== */
   .chat-fab{
-    position:fixed;
-    bottom:24px;right:24px;
-    z-index:900;
-    width:64px;height:64px;
-    border-radius:50%;
+    position:fixed;bottom:24px;right:24px;z-index:900;
+    width:64px;height:64px;border-radius:50%;
     background:linear-gradient(135deg,var(--red),var(--red-dark));
-    border:none;
-    color:#fff;
-    cursor:pointer;
+    border:none;color:#fff;cursor:pointer;
     box-shadow:0 10px 30px rgba(229,35,44,0.45), 0 4px 12px rgba(0,0,0,0.25);
     display:flex;align-items:center;justify-content:center;
     transition:transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s;
-    animation:fab-pulse 2.4s ease-in-out infinite;
+  }
+  .chat-fab::after{
+    content:"";position:absolute;inset:0;border-radius:50%;
+    border:2px solid rgba(229,35,44,0.5);
+    pointer-events:none;
+    animation:fab-ring 2.6s ease-out infinite;
   }
   .chat-fab:hover{transform:scale(1.08);box-shadow:0 14px 40px rgba(229,35,44,0.6)}
   .chat-fab.hidden{transform:scale(0);opacity:0;pointer-events:none}
@@ -418,9 +418,9 @@
     display:flex;align-items:center;justify-content:center;
     border:2px solid var(--ink);
   }
-  @keyframes fab-pulse{
-    0%,100%{box-shadow:0 10px 30px rgba(229,35,44,0.45), 0 4px 12px rgba(0,0,0,0.25), 0 0 0 0 rgba(229,35,44,0.5)}
-    50%{box-shadow:0 10px 30px rgba(229,35,44,0.45), 0 4px 12px rgba(0,0,0,0.25), 0 0 0 14px rgba(229,35,44,0)}
+  @keyframes fab-ring{
+    0%{transform:scale(1);opacity:.6}
+    100%{transform:scale(1.55);opacity:0}
   }
 
   .chat-panel{
@@ -591,7 +591,6 @@
   .firework-canvas{
     position:absolute;inset:0;width:100%;height:100%;
     pointer-events:none;z-index:1;
-    mix-blend-mode:screen;
   }
   .embers{
     position:absolute;inset:0;overflow:hidden;
@@ -692,36 +691,15 @@
   /* ====== VIDEO SECTION ====== */
   .videos{background:linear-gradient(180deg,var(--ink),#070b14);position:relative}
   .videos .center{max-width:720px;margin:0 auto}
-  .videos-grid{
-    display:grid;grid-template-columns:1fr;gap:1.2rem;
-    margin-top:2.4rem;
-  }
-  @media (min-width: 800px){
-    .videos-grid{grid-template-columns:1fr 1fr;gap:1.5rem}
-  }
-  .video-card{
-    border-radius:14px;overflow:hidden;
-    border:1px solid var(--line);
-    background:rgba(255,255,255,0.04);
-    transition:transform .28s ease, border-color .28s ease, box-shadow .28s ease;
-    box-shadow:0 14px 36px rgba(0,0,0,0.4);
-  }
+  .videos-grid{display:grid;grid-template-columns:1fr;gap:1.2rem;margin-top:2.4rem}
+  @media (min-width: 800px){.videos-grid{grid-template-columns:1fr 1fr;gap:1.5rem}}
+  .video-card{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:rgba(255,255,255,0.04);transition:transform .28s ease, border-color .28s ease, box-shadow .28s ease;box-shadow:0 14px 36px rgba(0,0,0,0.4)}
   .video-card:hover{transform:translateY(-5px);border-color:var(--red);box-shadow:0 22px 50px rgba(0,0,0,0.55)}
-  .video-frame{
-    position:relative;width:100%;aspect-ratio:16/9;background:#000;
-    overflow:hidden;
-  }
-  .video-frame iframe{
-    position:absolute;inset:0;width:100%;height:100%;
-    border:0;display:block;
-  }
-  .videos-cta{
-    margin-top:3rem;text-align:center;
-    display:flex;flex-direction:column;align-items:center;gap:.8rem;
-  }
+  .video-frame{position:relative;width:100%;aspect-ratio:16/9;background:#000;overflow:hidden}
+  .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+  .videos-cta{margin-top:3rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:.8rem}
   .videos-cta p{color:#cdd4e3;font-size:1rem;margin:0}
   .videos-cta .btn{display:inline-flex;align-items:center;gap:.5rem}
-  .videos-cta svg{width:16px;height:16px;fill:currentColor}
 </style>
 </head>
 <body>
@@ -843,7 +821,7 @@
       <h2 class="section-title">A <span class="red">Family-Owned,</span> <span class="blue">Veteran-Led</span> Tradition</h2>
       <div class="about-copy">
         <p>At <strong>G&amp;C Fireworks</strong>, family, community, and celebration are at the heart of everything we do. Though we're from Arkansas and Tennessee and have lived all over the state, Northwest Arkansas is home &mdash; with our family rooted throughout the valley and NWA.</p>
-        <p>Outside of fireworks, we serve our community through healthcare at Johnson Prosthetics &amp; Orthotics. But we wanted to create something special together that reflects our love for this community and the values of our country &mdash; and that vision became G&amp;C Fireworks.</p>
+        <p>Outside of fireworks, we serve our community through healthcare at Mercy, WRMC, and Snell Prosthetics &amp; Orthotics. But we wanted to create something special together that reflects our love for this community and the values of our country &mdash; and that vision became G&amp;C Fireworks.</p>
         <p><strong>Greg is a veteran,</strong> and with military service running deep in both of our families, patriotism is in our blood. To us, fireworks are more than entertainment &mdash; they're a way to bring people together, honor traditions, and celebrate freedom.</p>
         <p>We're proud to offer one of the best selections of fireworks in Fayetteville. Whether it's the Fourth of July, a family gathering, or a moment worth lighting up &mdash; we're here to help make it unforgettable.</p>
       </div>
@@ -944,6 +922,7 @@
   </div>
 </section>
 
+
 <!-- VIDEOS -->
 <section class="videos">
   <div class="container">
@@ -954,59 +933,24 @@
     </div>
 
     <div class="videos-grid">
-      <!-- top-left: Vimeo 333551742 -->
-      <div class="video-card">
-        <div class="video-frame">
-          <iframe src="https://player.vimeo.com/video/333551742"
-                  title="G&amp;C Fireworks display 1"
-                  frameborder="0"
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowfullscreen
-                  loading="lazy"></iframe>
-        </div>
-      </div>
-
-      <!-- top-right: YouTube HotA58_07zA (with t=2s start) -->
-      <div class="video-card">
-        <div class="video-frame">
-          <iframe src="https://www.youtube.com/embed/HotA58_07zA?start=2"
-                  title="G&amp;C Fireworks display 2"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen
-                  loading="lazy"></iframe>
-        </div>
-      </div>
-
-      <!-- bottom-left: Vimeo 22080777 -->
-      <div class="video-card">
-        <div class="video-frame">
-          <iframe src="https://player.vimeo.com/video/22080777"
-                  title="G&amp;C Fireworks display 3"
-                  frameborder="0"
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowfullscreen
-                  loading="lazy"></iframe>
-        </div>
-      </div>
-
-      <!-- bottom-right: YouTube 27pC-PhqV84 -->
-      <div class="video-card">
-        <div class="video-frame">
-          <iframe src="https://www.youtube.com/embed/27pC-PhqV84"
-                  title="G&amp;C Fireworks display 4"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen
-                  loading="lazy"></iframe>
-        </div>
-      </div>
+      <div class="video-card"><div class="video-frame">
+        <iframe src="https://player.vimeo.com/video/333551742" title="G&amp;C Fireworks display 1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div></div>
+      <div class="video-card"><div class="video-frame">
+        <iframe src="https://www.youtube.com/embed/HotA58_07zA?start=2" title="G&amp;C Fireworks display 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+      </div></div>
+      <div class="video-card"><div class="video-frame">
+        <iframe src="https://player.vimeo.com/video/22080777" title="G&amp;C Fireworks display 3" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div></div>
+      <div class="video-card"><div class="video-frame">
+        <iframe src="https://www.youtube.com/embed/27pC-PhqV84" title="G&amp;C Fireworks display 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+      </div></div>
     </div>
 
     <div class="videos-cta reveal">
       <p>Want more? Follow us on Facebook for the latest videos and updates.</p>
       <a href="https://www.facebook.com/p/GC-Fireworks-61560803761402/" class="btn btn-blue" target="_blank" rel="noopener" aria-label="Follow G&amp;C Fireworks on Facebook">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
         Follow on Facebook
       </a>
     </div>
@@ -1401,7 +1345,7 @@
 
   // ===== STARFIELD (subtle twinkle, background) =====
   const stars = document.getElementById('stars');
-  for (let i = 0; i < 40; i++) {
+  for (let i = 0; i < 22; i++) {
     const dot = document.createElement('div');
     dot.className = 'star-dot';
     dot.style.left = Math.random() * 100 + '%';
@@ -1415,7 +1359,7 @@
   const embersContainer = document.getElementById('embers');
   const emberColors = ['', 'red', 'blue', 'white']; // '' = default gold
   if (embersContainer) {
-    for (let i = 0; i < 36; i++) {
+    for (let i = 0; i < 20; i++) {
       const e = document.createElement('div');
       e.className = 'ember ' + emberColors[Math.floor(Math.random() * emberColors.length)];
       e.style.left = (Math.random() * 100) + '%';
@@ -1455,7 +1399,7 @@
     ];
 
     const particles = [];
-    const maxBursts = 2;   // concurrent bursts in flight
+    const maxBursts = 1;   // concurrent bursts in flight
     let activeBursts = 0;
 
     function spawnBurst() {
@@ -1465,7 +1409,7 @@
       const x = rect.width * (0.18 + Math.random() * 0.64);
       const y = rect.height * (0.18 + Math.random() * 0.45);
       const pair = colors[Math.floor(Math.random() * colors.length)];
-      const count = 42 + Math.floor(Math.random() * 18);
+      const count = 28 + Math.floor(Math.random() * 10);
       for (let i = 0; i < count; i++) {
         const angle = (Math.PI * 2) * (i / count) + (Math.random() - 0.5) * 0.15;
         const speed = 1.8 + Math.random() * 2.4;
@@ -1511,7 +1455,7 @@
       ctx.globalAlpha = 1;
 
       // Spawn bursts every 3.5-6.5s
-      if (now - lastBurst > (3500 + Math.random() * 3000)) {
+      if (now - lastBurst > (5500 + Math.random() * 3500)) {
         spawnBurst();
         lastBurst = now;
       }
@@ -1749,4 +1693,9 @@
     chatPanel.classList.remove('sent');
     chatThanksEl.classList.remove('is-error','is-sending');
     chatThanksTitle.textContent = 'Message Sent!';
-   
+    document.getElementById('chatThanksIcon').textContent = '✓';
+    chatSubmitted = false;
+  });
+</script>
+</body>
+</html>
